@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Anatomy of a SDP</title>
+</head>
+<body>
+<table style="width: 100%;">
+    <tbody>
+    <tr>
+        <td style="vertical-align: top; width: 60%; height: 2200px;">&nbsp;
+            <table style="border: 1px; width: 100%;">
+                <tbody>
+                <tr>
+                    <td style="border: 1px; width: 100%;">
+                        <div style="float: right; margin: 0px 0px 0px 0px;"><b>Global Lines</b></div>
+                        <a id="link1" class="link" href="./sdp/1.html" target="descriptions">v=0</a>
+                        <a id="link2" class="link" href="./sdp/2.html" target="descriptions">o=- 680121471469462884 2 IN IP4 127.0.0.1</a>
+                        <a id="link3" class="link" href="./sdp/3.html" target="descriptions">s=-</a>
+                        <a id="link4" class="link" href="./sdp/4.html" target="descriptions">t=0 0</a>
+                        <a id="link5" class="link" href="./sdp/5.html" target="descriptions">a=group:BUNDLE audio video</a>
+                        <a id="link6" class="link" href="./sdp/6.html" target="descriptions">a=msid-semantic: WMS GUKF430Khp9jEQiPrdYe0LbTAALiNAKAIfl2</a></td>
+                </tr>
+                </tbody>
+            </table>
+            <table style="border: 1px; width: 100%;">
+                <tbody>
+                <tr>
+                    <td>
+                        <div style="float: right; margin: 0px 0px 0px 0px;"><b>Audio Lines</b></div>
+                        <a id="link7" class="link" href="./sdp/7.html" target="descriptions">m=audio 54278 RTP/SAVPF 111 103 104 0 8 106 105 13 126</a>
+                        <a id="link8" class="link" href="./sdp/8.html" target="descriptions">c=IN IP4 180.6.6.6</a>
+                        <a id="link9" class="link" href="./sdp/9.html" target="descriptions">a=rtcp:54278 IN IP4 180.6.6.6</a>
+                        <table style="border: 1px; width: 100%;">
+                            <tbody>
+                            <tr>
+                                <td >
+                                    <div style="float: right; margin: 0px 0px 0px 0px;"><b>ICE Candidates</b></div>
+                                    <a id="link10" class="link" href="./sdp/10.html" target="descriptions">a=candidate:4022866446 1 udp 2113937151 192.168.0.197 36768 typ host generation 0</a>
+                                    <a id="link11" class="link" href="./sdp/11.html" target="descriptions">a=candidate:4022866446 2 udp 2113937151 192.168.0.197 36768 typ host generation 0</a>
+                                    <a id="link12" class="link" href="./sdp/12.html" target="descriptions">a=candidate:2706108158 1 tcp 1509957375 192.168.0.197 0 typ host generation 0</a>
+                                    <a id="link13" class="link" href="./sdp/13.html" target="descriptions">a=candidate:2706108158 2 tcp 1509957375 192.168.0.197 0 typ host generation 0</a>
+                                    <a id="link14" class="link" href="./sdp/14.html" target="descriptions">a=candidate:1853887674 1 udp 1845501695 46.2.2.2 36768 typ srflx raddr 192.168.0.197 rport 36768 generation 0 </a>
+                                    <a id="link15" class="link" href="./sdp/15.html" target="descriptions">a=candidate:1853887674 2 udp 1845501695 46.2.2.2 36768 typ srflx raddr 192.168.0.197 rport 36768 generation 0</a>
+                                    <a id="link16" class="link" href="./sdp/16.html" target="descriptions">a=candidate:2157334355 1 udp 33562367 180.6.6.6 54278 typ relay raddr 46.2.2.2 rport 38135 generation 0</a>
+                                    <a id="link17" class="link" href="./sdp/17.html" target="descriptions">a=candidate:2157334355 2 udp 33562367 180.6.6.6 54278 typ relay raddr 46.2.2.2 rport 38135 generation 0</a></td>
+                            </tr>
+                            </tbody>
+                        </table>
+                        <table style="border: 1px; width: 100%;">
+                            <tbody>
+                            <tr>
+                                <td >
+                                    <div style="float: right; margin: 0px 0px 0px 0px;"><b>ICE Parameters</b></div>
+                                    <a id="link18" class="link" href="./sdp/18.html" target="descriptions">a=ice-ufrag:kwlYyWNjhC9JBe/V</a>
+                                    <a id="link19" class="link" href="./sdp/19.html" target="descriptions">a=ice-pwd:AU/SQPupllyS0SDG/eRWDCfA</a>
+                                    <a id="link20" class="link" href="./sdp/20.html" target="descriptions">a=ice-options:google-ice</a></td>
+                            </tr>
+                            </tbody>
+                        </table>
+                        <table style="border: 1px; width: 100%;">
+                            <tbody>
+                            <tr>
+                                <td >
+                                    <div style="float: right; margin: 0px 0px 0px 0px;"><b>DTLS Parameters</b></div>
+                                    <a id="link21" class="link" href="./sdp/21.html" target="descriptions">a=fingerprint:sha-256 D1:2C:BE:AD:C4:F6:64:5C:25:16:11:9C:AF:E7:0F:73:79:36:4E:9C:1E:15:54:39:0C:06:8B:ED:96:86:00:39</a>
+                                    <a id="link22" class="link" href="./sdp/22.html" target="descriptions">a=setup:actpass</a></td>
+                            </tr>
+                            </tbody>
+                        </table>
+                        <a id="link23" class="link" href="./sdp/23.html" target="descriptions">a=mid:audio</a>
+                        <a id="link24" class="link" href="./sdp/24.html" target="descriptions">a=extmap:1 urn:ietf:params:rtp-hdrext:ssrc-audio-level</a>
+                        <a id="link25" class="link" href="./sdp/25.html" target="descriptions">a=sendrecv</a>
+                        <a id="link26" class="link" href="./sdp/26.html" target="descriptions">a=rtcp-mux</a>
+                        <a id="link27" class="link" href="./sdp/27.html" target="descriptions">a=crypto:1 AES_CM_128_HMAC_SHA1_80 inline:qwaJWnQkwMChhIQ/dkC9tUnijwUBe2k50XLxm0G3</a>
+                        <table style="border: 1px; width: 100%;">
+                            <tbody>
+                            <tr>
+                                <td >
+                                    <div style="float: right; margin: 0px 0px 0px 0px;"><b>Codec Parameters</b></div>
+                                    <a id="link28" class="link" href="./sdp/28.html" target="descriptions">a=rtpmap:111 opus/48000/2</a>
+                                    <a id="link29" class="link" href="./sdp/29.html" target="descriptions">a=fmtp:111 minptime=10</a>
+                                    <a id="link30" class="link" href="./sdp/30.html" target="descriptions">a=rtpmap:103 ISAC/16000</a>
+                                    <a id="link31" class="link" href="./sdp/31.html" target="descriptions">a=rtpmap:104 ISAC/32000</a>
+                                    <a id="link32" class="link" href="./sdp/32.html" target="descriptions">a=rtpmap:0 PCMU/8000</a>
+                                    <a id="link33" class="link" href="./sdp/33.html" target="descriptions">a=rtpmap:8 PCMA/8000</a>
+                                    <a id="link34" class="link" href="./sdp/34.html" target="descriptions">a=rtpmap:106 CN/32000</a>
+                                    <a id="link35" class="link" href="./sdp/35.html" target="descriptions">a=rtpmap:105 CN/16000</a>
+                                    <a id="link36" class="link" href="./sdp/36.html" target="descriptions">a=rtpmap:13 CN/8000</a>
+                                    <a id="link37" class="link" href="./sdp/37.html" target="descriptions">a=rtpmap:126 telephone-event/8000</a>
+                                    <a id="link38" class="link" href="./sdp/38.html" target="descriptions">a=maxptime:60</a></td>
+                            </tr>
+                            </tbody>
+                        </table>
+                        <table style="border: 1px; width: 100%;">
+                            <tbody>
+                            <tr>
+                                <td >
+                                    <div style="float: right; margin: 0px 0px 0px 0px;"><b>SSRC Parameters</b></div>
+                                    <a id="link39" class="link" href="./sdp/39.html" target="descriptions">a=ssrc:189858836 cname:rfQMs6/rvuHHWkM4</a>
+                                    <a id="link40" class="link" href="./sdp/40.html" target="descriptions">a=ssrc:189858836 msid:GUKF430Khp9jEQiPrdYe0LbTAALiNAKAIfl2 ea392930-e126-4573-bea3-bfba519b4d59</a>
+                                    <a id="link41" class="link" href="./sdp/41.html" target="descriptions">a=ssrc:189858836 mslabel:GUKF430Khp9jEQiPrdYe0LbTAALiNAKAIfl2</a>
+                                    <a id="link42" class="link" href="./sdp/42.html" target="descriptions">a=ssrc:189858836 label:ea392930-e126-4573-bea3-bfba519b4d59</a></td>
+                            </tr>
+                            </tbody>
+                        </table>
+                    </td>
+                </tr>
+                </tbody>
+            </table>
+            <table style="border: 1px; width: 100%;">
+                <tbody>
+                <tr>
+                    <td>
+                        <div style="float: right; margin: 0px 0px 0px 0px;"><b>Video Lines</b></div>
+                        <a id="link43" class="link" href="./sdp/43.html" target="descriptions">m=video 54278 RTP/SAVPF 100 116 117</a>
+                        <a id="link44" class="link" href="./sdp/44.html" target="descriptions">c=IN IP4 180.6.6.6</a>
+                        <a id="link45" class="link" href="./sdp/45.html" target="descriptions">a=rtcp:54278 IN IP4 180.6.6.6</a>
+                        <table style="border: 1px; width: 100%;">
+                            <tbody>
+                            <tr>
+                                <td >
+                                    <div style="float: right; margin: 0px 0px 0px 0px;"><b>ICE Candidates</b></div>
+                                    <a id="link46" class="link" href="./sdp/46.html" target="descriptions">a=candidate:4022866446 1 udp 2113937151 192.168.0.197 36768 typ host generation 0</a>
+                                    <a id="link47" class="link" href="./sdp/47.html" target="descriptions">a=candidate:4022866446 2 udp 2113937151 192.168.0.197 36768 typ host generation 0</a>
+                                    <a id="link48" class="link" href="./sdp/48.html" target="descriptions">a=candidate:2706108158 1 tcp 1509957375 192.168.0.197 0 typ host generation 0</a>
+                                    <a id="link49" class="link" href="./sdp/49.html" target="descriptions">a=candidate:2706108158 2 tcp 1509957375 192.168.0.197 0 typ host generation 0</a>
+                                    <a id="link50" class="link" href="./sdp/50.html" target="descriptions">a=candidate:1853887674 1 udp 1845501695 46.2.2.2 36768 typ srflx raddr 192.168.0.197 rport 36768 generation 0</a>
+                                    <a id="link51" class="link" href="./sdp/51.html" target="descriptions">a=candidate:1853887674 2 udp 1845501695 46.2.2.2 36768 typ srflx raddr 192.168.0.197 rport 36768 generation 0</a>
+                                    <a id="link52" class="link" href="./sdp/52.html" target="descriptions">a=candidate:2157334355 1 udp 33562367 180.6.6.6 54278 typ relay raddr 46.2.2.2 rport 38135 generation 0</a>
+                                    <a id="link53" class="link" href="./sdp/53.html" target="descriptions">a=candidate:2157334355 2 udp 33562367 180.6.6.6 54278 typ relay raddr 46.2.2.2 rport 38135 generation 0</a></td>
+                            </tr>
+                            </tbody>
+                        </table>
+                        <table style="border: 1px; width: 100%;">
+                            <tbody>
+                            <tr>
+                                <td >
+                                    <div style="float: right; margin: 0px 0px 0px 0px;"><b>ICE Parameters</b></div>
+                                    <a id="link54" class="link" href="./sdp/54.html" target="descriptions">a=ice-ufrag:kwlYyWNjhC9JBe/V</a>
+                                    <a id="link55" class="link" href="./sdp/55.html" target="descriptions">a=ice-pwd:AU/SQPupllyS0SDG/eRWDCfA</a>
+                                    <a id="link56" class="link" href="./sdp/56.html" target="descriptions">a=ice-options:google-ice</a></td>
+                            </tr>
+                            </tbody>
+                        </table>
+                        <table style="border: 1px; width: 100%;">
+                            <tbody>
+                            <tr>
+                                <td >
+                                    <div style="float: right; margin: 0px 0px 0px 0px;"><b>DTLS Parameters</b></div>
+                                    <a id="link57" class="link" href="./sdp/57.html" target="descriptions">a=fingerprint:sha-256 D1:2C:BE:AD:C4:F6:64:5C:25:16:11:9C:AF:E7:0F:73:79:36:4E:9C:1E:15:54:39:0C:06:8B:ED:96:86:00:39</a>
+                                    <a id="link58" class="link" href="./sdp/58.html" target="descriptions">a=setup:actpass</a></td>
+                            </tr>
+                            </tbody>
+                        </table>
+                        <a id="link59" class="link" href="./sdp/59.html" target="descriptions">a=mid:video</a>
+                        <a id="link60" class="link" href="./sdp/60.html" target="descriptions">a=extmap:2 urn:ietf:params:rtp-hdrext:toffset </a>
+                        <a id="link61" class="link" href="./sdp/61.html" target="descriptions">a=extmap:3http://www.webrtc.org/experiments/rtp-hdrext/abs-send-time</a>
+                        <a id="link62" class="link" href="./sdp/62.html" target="descriptions">a=sendrecv</a>
+                        <a id="link63" class="link" href="./sdp/63.html" target="descriptions">a=rtcp-mux</a>
+                        <a id="link64" class="link" href="./sdp/64.html" target="descriptions">a=crypto:1 AES_CM_128_HMAC_SHA1_80 inline:qwaJWnQkwMChhIQ/dkC9tUnijwUBe2k50XLxm0G3</a>
+                        <table style="border: 1px; width: 100%;">
+                            <tbody>
+                            <tr>
+                                <td >
+                                    <div style="float: right; margin: 0px 0px 0px 0px;"><b>Codec Parameters</b></div>
+                                    <a id="link65" class="link" href="./sdp/65.html" target="descriptions">a=rtpmap:100 VP8/90000</a>
+                                    <a id="link66" class="link" href="./sdp/66.html" target="descriptions">a=rtcp-fb:100 ccm fir</a>
+                                    <a id="link67" class="link" href="./sdp/67.html" target="descriptions">a=rtcp-fb:100 nack</a>
+                                    <a id="link68" class="link" href="./sdp/68.html" target="descriptions">a=rtcp-fb:100 goog-remb</a>
+                                    <a id="link69" class="link" href="./sdp/69.html" target="descriptions">a=rtpmap:116 red/90000</a>
+                                    <a id="link70" class="link" href="./sdp/70.html" target="descriptions">a=rtpmap:117 ulpfec/90000</a></td>
+                            </tr>
+                            </tbody>
+                        </table>
+                        <table style="border: 1px; width: 100%;">
+                            <tbody>
+                            <tr>
+                                <td >
+                                    <div style="float: right; margin: 0px 0px 0px 0px;"><b>SSRC Parameters</b></div>
+                                    <a id="link71" class="link" href="./sdp/71.html" target="descriptions">a=ssrc:1993357196 cname:rfQMs6/rvuHHWkM4</a>
+                                    <a id="link72" class="link" href="./sdp/72.html" target="descriptions">a=ssrc:1993357196 msid:GUKF430Khp9jEQiPrdYe0LbTAALiNAKAIfl2 753ad6b1-31a6-4fea-8070-269c6df6ff0e</a>
+                                    <a id="link73" class="link" href="./sdp/73.html" target="descriptions">a=ssrc:1993357196 mslabel:GUKF430Khp9jEQiPrdYe0LbTAALiNAKAIfl2</a>
+                                    <a id="link74" class="link" href="./sdp/74.html" target="descriptions">a=ssrc:1993357196 label:753ad6b1-31a6-4fea-8070-269c6df6ff0e </a></td>
+                            </tr>
+                            </tbody>
+                        </table>
+                    </td>
+                </tr>
+                </tbody>
+            </table>
+            &nbsp;</td>
+        <td style="vertical-align: top; width: 40%;">
+            <div id="fixedscroll-sticky-wrapper" class="sticky-wrapper is-sticky" style="height: 750px; max-width: 232px;">
+                <div id="fixedscroll"><iframe width="300"  style="height: 100%; max-width: 232px;" name="descriptions" src="./sdp/descriptions.html" frameborder="0"></iframe></div>
+            </div></td>
+    </tr>
+    </tbody>
+</table>
+</body>
+</html>
