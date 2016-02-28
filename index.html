@@ -3,23 +3,35 @@
 <head>
     <meta charset="UTF-8">
     <title>Anatomy of a SDP</title>
-    <script src="./js/jquery.min.js"></script>
-    <script src ="./js/bootstrap.js"></script>
-    <!-- Bootstrap -->
-    <link href="./css/bootstrap.css" rel="stylesheet">
+    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+    <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
     <style>
-        table{
-            border: 1px;
+        table {
+            border: 1px solid;
             width: 100%;
             border-color: #080808;
         }
+        tr {
+        }
         .section-label{
             float: right; 
-            margin: 0;
+            margin: 10px;
             vertical-align: top;
         }
         .link{
+            float: left;
+            clear: left;
 
+        }
+        iframe{
+            position: absolute;
+            border: 1px;
+            height: 100%;
+        }
+        .description {
+            position: fixed;
+            height: 100%;
         }
 
     </style>
@@ -34,7 +46,7 @@
                     <tbody>
                     <tr>
                         <td>
-                            <div class="section-label"><b>Global Lines</b></div>
+                            <p class="section-label">Global Lines</p>
                             <a id="link1" class="link" href="./sdp/1.html" target="descriptions">v=0</a>
                             <a id="link2" class="link" href="./sdp/2.html" target="descriptions">o=- 680121471469462884 2 IN IP4 127.0.0.1</a>
                             <a id="link3" class="link" href="./sdp/3.html" target="descriptions">s=-</a>
@@ -219,9 +231,13 @@
     <div class="col-sm-4">
     <!--div id="fixedscroll-sticky-wrapper" class="sticky-wrapper is-sticky"-->
         <!--div id="fixedscroll"><iframe name="descriptions" src="./sdp/descriptions.html" frameborder="1"></iframe></div-->
-        <div data-spy="affix">
-            <iframe name="descriptions"  src="./sdp/descriptions.html" height="450" frameborder="1"><iframe>
+        <div data-spy="affix" class="description">
+            <iframe name="descriptions" src="./sdp/descriptions.html"></iframe>
         </div>
     </div>
+
+<script>
+
+</script>
 </body>
 </html>
