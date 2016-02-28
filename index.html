@@ -29,7 +29,7 @@
             border: 1px;
             height: 100%;
         }
-        .description {
+        #description {
             position: fixed;
             height: 100%;
         }
@@ -46,13 +46,13 @@
                     <tbody>
                     <tr>
                         <td>
-                            <p class="section-label">Global Lines</p>
-                            <a id="link1" class="link" href="./sdp/1.html" target="descriptions">v=0</a>
-                            <a id="link2" class="link" href="./sdp/2.html" target="descriptions">o=- 680121471469462884 2 IN IP4 127.0.0.1</a>
-                            <a id="link3" class="link" href="./sdp/3.html" target="descriptions">s=-</a>
-                            <a id="link4" class="link" href="./sdp/4.html" target="descriptions">t=0 0</a>
-                            <a id="link5" class="link" href="./sdp/5.html" target="descriptions">a=group:BUNDLE audio video</a>
-                            <a id="link6" class="link" href="./sdp/6.html" target="descriptions">a=msid-semantic: WMS GUKF430Khp9jEQiPrdYe0LbTAALiNAKAIfl2</a></td>
+                            <p class="section-label indent0">Global Lines</p>
+                            <a id="link1" class="link indent0">o=- 4611731400430051336 2 IN IP4 127.0.0.1</a>
+                            <a id="link2" class="link indent0">s=-</a>
+                            <a id="link3" class="link indent0">t=0 0</a>
+                            <a id="link4" class="link indent0">a=group:BUNDLE audio video</a>
+                            <a id="link5" class="link indent0">a=msid-semantic: WMS lgsCFqt9kN2fVKw5wg3NKqGdATQoltEwOdMS</a>
+                        </td>
                     </tr>
                     </tbody>
                 </table>
@@ -231,13 +231,35 @@
     <div class="col-sm-4">
     <!--div id="fixedscroll-sticky-wrapper" class="sticky-wrapper is-sticky"-->
         <!--div id="fixedscroll"><iframe name="descriptions" src="./sdp/descriptions.html" frameborder="1"></iframe></div-->
-        <div data-spy="affix" class="description">
+        <div data-spy="affix" id="description">
             <iframe name="descriptions" src="./sdp/descriptions.html"></iframe>
         </div>
     </div>
 
 <script>
+    descriptions = {
+        'link1' :'The first number is the session id, an unique identifier for the session . The number in second position - 2 -  is the session version: if a new offer/answer negotiation is needed during this media session this number will be increased by one. This will happen when any parameter need to be changed in the media session such as on-hold, codec-change, add-remove media track. The three following fields are the network type (Internet), IP address type (version 4) and unicast address of the machine which created the SDP. These three values are not relevant for the negotiation.',
+        'link2' :'The s line contains a textual session name, which is not commonly used as you can see here.',
+        'link3' :'It gives the starting and ending time. When they are both set to 0 like our case it means that the session is not bounded to a specific timing- in other words it’s permanent and valid at any time.',
+        'link4' :'<em>BUNDLE</em> groupings establishes a relationship between several media lines included in the SDP, commonly<b>audio</b>and<b>video</b>. &nbsp;In WebRTC it’s use to multiplex several media flows in the same RTP session as described in <a href="http://tools.ietf.org/html/draft-ietf-mmusic-sdp-bundle-negotiation">draft-ietf-mmusic-sdp-bundle-negotiation</a>.&nbsp;In this case the browser offers to multiplex both audio and video, but that has to be also supported and accepted by the other side.',
+        'link5' :'BUNDLE groupings establishes a relationship between several media lines included in the SDP, commonly audio and video. In WebRTC it’s use to multiplex several media flows in the same RTP session as described in <a href="http://tools.ietf.org/html/draft-ietf-mmusic-sdp-bundle-negotiation">draft-ietf-mmusic-sdp-bundle-negotiation</a>.  In this case the browser offers to multiplex both audio and video, but that has to be also supported and accepted by the other side.'
+    };
 
+    $(document).ready(function(){
+        var i, l, s, h;
+        $('.link').click(function(){
+            i=$(this).attr("id");
+            l=$(this)[0].text;
+            s=$(this).parent().find("p")[0].innerHTML;
+
+
+            console.log(s);
+            h = "<p>" + s + "</p>" + "<p><b>" + l + "</b></p><p>" + descriptions[i] + "</p>";
+
+            $('#description').html(h);
+            //console.log(descriptions[d]);
+        });
+    });
 </script>
 </body>
 </html>
