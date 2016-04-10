@@ -6,14 +6,21 @@
     <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
     <script src="//ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
     <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
-    <!--link rel="stylesheet" href="https://webrtchacks.com/wp-content/themes/parament/style.css?ver=1.0"-->
     <style>
 
-        iframe{
-            position: absolute;
-            border: 1px;
-            height: 100%;
+    /*bootstrap tweaks*/
+        .list-group-item{
+            padding: 5px;
+            word-wrap: break-word;
         }
+        .list-group-item:nth-child(odd) { background: whitesmoke; }
+
+        .well{
+            margin: 1px;
+            padding: 5px 10px 5px 10px;
+        }
+
+    /*app CSS classes*/
         .section-label{
             /*float: right;*/
             margin: 5px;
@@ -22,11 +29,6 @@
             font-size: larger;
             text-align: right;
         }
-
-        .list-group-item{
-            padding: 5px;
-        }
-
         .description-label{
             /*float: right;*/
             margin: 5px 0 5px 0;
@@ -45,23 +47,16 @@
             margin: 10px;
         }
 
-        .well{
-            margin: 1px;
-            padding: 5px 10px 5px 10px;
-        }
 
         #description {
             position: fixed;
             height: 100%;
             margin-top: 20px;
             margin-right: 10px;
+            overflow: scroll;
         }
 
-        /*.list-group-item { background: green; }*/
-        .list-group-item:nth-child(odd) { background: whitesmoke; }
-        .list-group-item {
-            word-wrap: break-word;
-        }
+
 
     </style>
 </head>
@@ -100,7 +95,6 @@ for (var n in data){
         //populate our hoverdata
         //TODO: do a lookup on the data object so I don't need to replicate this
         var lineData = {
-            //"lineNum": d.lineNum,
             "lineText": d.lineText,
             "description": d.description,
             "section": d.section
@@ -147,17 +141,12 @@ $(".list-group-item").hover(function(){
     currentLine = i.slice(-1 * (i.length -4)) -1;  //get the line # out of the class name
 
 
-    //s = ($(this).parent().find("p"));
-    //console.log(s[0].innerHTML);
-
-
     descriptionText = "<p class='description-label'>" + hoverData[currentLine].section + "</p>" +
             "<p class='list-group-item description-line'>" + hoverData[currentLine].lineText +"</p>" +
             "<p class='description-body'>" + hoverData[currentLine].description +"</p>";
 
     $('#description').html(descriptionText);
 });
-
 
 
 </script>
