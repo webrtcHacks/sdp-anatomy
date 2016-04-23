@@ -1,0 +1,52 @@
+/******bootstrap tweaks******/
+.list-group-item {
+    padding: 5px;
+    word-wrap: break-word;
+}
+
+.list-group-item:nth-child(odd) {
+    background: whitesmoke;
+}
+
+.well {
+    margin: 1px;
+    padding: 5px 10px 5px 10px;
+}
+
+
+
+/******app CSS classes******/
+.section-label {
+    margin: 5px;
+    vertical-align: top;
+    font-weight: bold;
+    font-size: larger;
+    text-align: right;
+}
+
+.description-label {
+    margin: 5px 0 5px 0;
+    vertical-align: top;
+    font-weight: bold;
+    font-size: larger;
+}
+
+.description-line {
+    font-style: italic;
+    margin: 5px 0 5px 0;
+    background-color: whitesmoke;
+    word-break: break-all;
+}
+
+.description-body {
+    margin: 10px;
+}
+
+#description {
+    position: fixed;
+    height: 100%;
+    width: inherit;
+    margin-top: 20px;
+    margin-right: 10px;
+    overflow: scroll;
+}
