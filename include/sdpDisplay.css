@@ -3,17 +3,13 @@
     padding: 5px;
     word-wrap: break-word;
 }
-
 .list-group-item:nth-child(odd) {
     background: whitesmoke;
 }
-
 .well {
     margin: 1px;
     padding: 5px 10px 5px 10px;
 }
-
-
 
 /******app CSS classes******/
 .section-label {
@@ -25,28 +21,22 @@
 }
 
 .description-label {
-    margin: 5px 0 5px 0;
-    vertical-align: top;
     font-weight: bold;
     font-size: larger;
 }
-
 .description-line {
     font-style: italic;
-    margin: 5px 0 5px 0;
     background-color: whitesmoke;
     word-break: break-all;
 }
-
 .description-body {
-    margin: 10px;
+    margin-top: 10px;
 }
 
 #description {
+    margin-left: 10px;
+    margin-bottom: 5px;
     position: fixed;
-    height: 100%;
-    width: inherit;
-    margin-top: 20px;
-    margin-right: 10px;
-    overflow: scroll;
+    overflow-wrap: normal;
+    overflow: auto;
 }

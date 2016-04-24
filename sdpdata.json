@@ -88,7 +88,7 @@
       "indent": "2",
       "section": "Audio Lines -> ICE Candidates",
       "lineText": "a=candidate:1467250027 1 udp 2122260223 192.168.0.196 46243 typ host generation 0",
-      "description": "<p>ICE lines are the mechanism chosen for NAT traversal in WebRTC. You can find a very didactic and comprehensive explanation of ICE <a href=\"http:\/\/www.slideshare.net\/saghul\/ice-4414037\">here<\/a>. ICE is complex enough to deserve its own post, but I will try to explain its SDP lines in an understandable way.<\/p><p>Host candidate for RTP on UDP - in this ICE line our browser is giving its host candidates- the IP of the interface or interfaces the browser is listening on the computer. The browser can receive\/send SRTP and SRTCP on that IP in case there is IP visibility with some candidate of the remote peer. For example, if the other computer is on the same LAN, hosts candidates will be used. The number after the protocol (udp) – 2122260223 - is the priority of the candidate. Notice that priority of host candidates is the higher than other candidates as using host candidates are more efficient in terms of use of resources. The first lines (component= 1) is for RTP and second line (component = 2) is for RTCP.<\/p>"
+      "description": "<p>ICE is the protocol chosen for NAT traversal in WebRTC. You can find a very didactic and comprehensive explanation of ICE <a href=\"http:\/\/www.slideshare.net\/saghul\/ice-4414037\">here<\/a>. ICE is complex enough to deserve its own post, but I will try to explain its SDP lines in an understandable way.<\/p><p>Host candidate for RTP on UDP - in this ICE line our browser is giving its host candidates- the IP of the interface or interfaces the browser is listening on the computer. The browser can receive\/send SRTP and SRTCP on that IP in case there is IP visibility with some candidate of the remote peer. For example, if the other computer is on the same LAN, hosts candidates will be used. The number after the protocol (udp) – 2122260223 - is the priority of the candidate. Notice that priority of host candidates is the higher than other candidates as using host candidates are more efficient in terms of use of resources. The first lines (component= 1) is for RTP and second line (component = 2) is for RTCP.<\/p>"
     },
     {
       "display": "line",
@@ -96,7 +96,7 @@
       "indent": "2",
       "section": "Audio Lines -> ICE Candidates",
       "lineText": "a=candidate:1467250027 2 udp 2122260222 192.168.0.196 56280 typ host generation 0",
-      "description": "<p>ICE lines are the mechanism chosen for NAT traversal in WebRTC. You can find a very didactic and comprehensive explanation of ICE <a href=\"http:\/\/www.slideshare.net\/saghul\/ice-4414037\">here<\/a>. ICE is complex enough to deserve its own post, but I will try to explain its SDP lines in an understandable way.<\/p><p>Host candidate for RTCP on UDP - in this ICE line our browser is giving its host candidates- the IP of the interface or interfaces the browser is listening on the computer. The browser can receive\/send SRTP and SRTCP on that IP in case there is IP visibility with some candidate of the remote peer. For example, if the other computer is on the same LAN, hosts candidates will be used. The number after the protocol (udp) – 2122260222 - is the priority of the candidate. Notice that priority of host candidates is the higher than other candidates as using host candidates are more efficient in terms of use of resources. The first lines (component= 1) is for RTP and second line (component = 2) is for RTCP.<\/p>"
+      "description": "<p>ICE is the protocol chosen for NAT traversal in WebRTC. You can find a very didactic and comprehensive explanation of ICE <a href=\"http:\/\/www.slideshare.net\/saghul\/ice-4414037\">here<\/a>. ICE is complex enough to deserve its own post, but I will try to explain its SDP lines in an understandable way.<\/p><p>Host candidate for RTCP on UDP - in this ICE line our browser is giving its host candidates- the IP of the interface or interfaces the browser is listening on the computer. The browser can receive\/send SRTP and SRTCP on that IP in case there is IP visibility with some candidate of the remote peer. For example, if the other computer is on the same LAN, hosts candidates will be used. The number after the protocol (udp) – 2122260222 - is the priority of the candidate. Notice that priority of host candidates is the higher than other candidates as using host candidates are more efficient in terms of use of resources. The first lines (component= 1) is for RTP and second line (component = 2) is for RTCP. Please note that the browser does not know if the other end will support rtcp-mux, so it has to include a port for RTCP in the offer.<\/p>"
     },
     {
       "display": "line",
@@ -104,7 +104,7 @@
       "indent": "2",
       "section": "Audio Lines -> ICE Candidates",
       "lineText": "a=candidate:435653019 1 tcp 1845501695 192.168.0.196 0 typ host tcptype active generation 0",
-      "description": "<p>ICE lines are the mechanism chosen for NAT traversal in WebRTC. You can find a very didactic and comprehensive explanation of ICE <a href=\"http:\/\/www.slideshare.net\/saghul\/ice-4414037\">here<\/a>. ICE is complex enough to deserve its own post, but I will try to explain its SDP lines in an understandable way.<\/p><p>Host candidate for RTP over TCP - These lines are the same as the two ICE lines before but for TCP traffic. Please note that the priority is the lower – i.e 1845501695 is larger - as TCP is not optimal for real-time media transportation.<\/p>"
+      "description": "<p>ICE is the protocol chosen for NAT traversal in WebRTC. You can find a very didactic and comprehensive explanation of ICE <a href=\"http:\/\/www.slideshare.net\/saghul\/ice-4414037\">here<\/a>. ICE is complex enough to deserve its own post, but I will try to explain its SDP lines in an understandable way.<\/p><p>Host candidate for RTP over TCP - These lines are the same as the two ICE lines before but for TCP traffic. Please note that the priority is the lower – i.e 1845501695 is larger - as TCP is not optimal for real-time media transportation.<\/p>"
     },
     {
       "display": "line",
@@ -112,7 +112,7 @@
       "indent": "2",
       "section": "Audio Lines -> ICE Candidates",
       "lineText": "a=candidate:435653019 2 tcp 1845501695 192.168.0.196 0 typ host tcptype active generation 0",
-      "description": "<p>ICE lines are the mechanism chosen for NAT traversal in WebRTC. You can find a very didactic and comprehensive explanation of ICE <a href=\"http:\/\/www.slideshare.net\/saghul\/ice-4414037\">here<\/a>. ICE is complex enough to deserve its own post, but I will try to explain its SDP lines in an understandable way.<\/p><p>Host candidate for RTCP over TCP - these lines are the same as the two ICE lines before but for TCP traffic. Please note that the priority is the lower – i.e 1845501695 is larger - as TCP is not optimal for real-time media transportation.<\/p>"
+      "description": "<p>ICE is the protocol chosen for NAT traversal in WebRTC. You can find a very didactic and comprehensive explanation of ICE <a href=\"http:\/\/www.slideshare.net\/saghul\/ice-4414037\">here<\/a>. ICE is complex enough to deserve its own post, but I will try to explain its SDP lines in an understandable way.<\/p><p>Host candidate for RTCP over TCP - these lines are the same as the two ICE lines before but for TCP traffic. Please note that the priority is the lower – i.e 1845501695 is larger - as TCP is not optimal for real-time media transportation.<\/p>"
     },
     {
       "display": "line",
@@ -120,14 +120,14 @@
       "indent": "2",
       "section": "Audio Lines -> ICE Candidates",
       "lineText": "a=candidate:1853887674 1 udp 1518280447 47.61.61.61 36768 typ srflx raddr 192.168.0.196 rport 36768 generation 0",
-      "description": "<p>ICE lines are the mechanism chosen for NAT traversal in WebRTC. You can find a very didactic and comprehensive explanation of ICE <a href=\"http:\/\/www.slideshare.net\/saghul\/ice-4414037\">here<\/a>. ICE is complex enough to deserve its own post, but I will try to explain its SDP lines in an understandable way.<\/p><p>Reflexive candidate for RTP over UDP - here we have the server reflexive candidates. Note that they have lower priority than host candidates. These candidates are discovered thanks to STUN server (see this <a href=\"http:\/\/webrtchacks.com\/stun-helps-webrtc-traverse-nats\/>post<\/a> to learn more). The couple public public IP-port are included after the priority. The couple private IP-port after <em>typ srflx raddr<em> are the private IP:Port related (there is a NAT binding) to the public IP:Port where the traffic is going to be received.<\/p>"
+      "description": "<p>ICE is the protocol chosen for NAT traversal in WebRTC. You can find a very didactic and comprehensive explanation of ICE <a href=\"http:\/\/www.slideshare.net\/saghul\/ice-4414037\">here<\/a>. ICE is complex enough to deserve its own post, but I will try to explain its SDP lines in an understandable way.<\/p><p>Reflexive candidate for RTP over UDP - here we have the server reflexive candidates. Note that they have lower priority than host candidates. These candidates are discovered thanks to STUN server (see this <a href=\"http:\/\/webrtchacks.com\/stun-helps-webrtc-traverse-nats\/>post<\/a> to learn more). The couple public public IP-port are included after the priority. The couple private IP-port after <em>typ srflx raddr<em> are the private IP:Port related (there is a NAT binding) to the public IP:Port where the traffic is going to be received.<\/p>"
     },
     {
       "display": "line",
       "lineNum": "14",
       "indent": "2",
       "section": "Audio Lines -> ICE Candidates",
-      "lineText": "a=candidate:1853887674 2 udp 1518280446 47.61.61.61 36768 typ srflx raddr 192.168.0.196 rport 36768 generation 0",
+      "lineText": "a=candidate:1853887674 2 udp 1518280447 47.61.61.61 36768 typ srflx raddr 192.168.0.196 rport 36768 generation 0",
       "description": "<p>ICE lines are the mechanism chosen for NAT traversal in WebRTC. You can find a very didactic and comprehensive explanation of ICE <a href=\"http:\/\/www.slideshare.net\/saghul\/ice-4414037\">here<\/a>. ICE is complex enough to deserve its own post, but I will try to explain its SDP lines in an understandable way.<\/p><p>Reflexive candidate for RTCP over UDP - here we have the server reflexive candidates. Note that they have lower priority than host candidates. These candidates are discovered thanks to STUN server (see this <a href=\"http:\/\/webrtchacks.com\/stun-helps-webrtc-traverse-nats\/>post<\/a> to learn more). The couple public public IP-port are included after the priority. The couple private IP-port after <em>typ srflx raddr<em> are the private IP:Port related (there is a NAT binding) to the public IP:Port where the traffic is going to be received.<\/p>"
     },
     {
@@ -136,7 +136,7 @@
       "indent": "2",
       "section": "Audio Lines -> ICE Candidates",
       "lineText": "a=candidate:750991856 2 udp 25108222 237.30.30.30 51472 typ relay raddr 47.61.61.61 rport 54763 generation 0",
-      "description": "<p>ICE lines are the mechanism chosen for NAT traversal in WebRTC. You can find a very didactic and comprehensive explanation of ICE <a href=\"http:\/\/www.slideshare.net\/saghul\/ice-4414037\">here<\/a>. ICE is complex enough to deserve its own post, but I will try to explain its SDP lines in an understandable way.<\/p><p>Relay candidate for RTP over UDP - next we have the relay candidates. Those candidates are obtained from a TURN server which must be provisioned when creating the peer connection. Note that the priority here is lower than the host and reflex candidates (2157334355 is higher) so the relay will be used only if “hole punching” is not working with host and reflex candidates. Just for your curiosity we used the open source <a href=\"coturn.net\">coturn<\/a> project in this test (see our post on that <a href=\"https:\/\/webrtchacks.com\/coturn\/\">here<\/a>).<\/p>"
+      "description": "<p>ICE is the protocol chosen for NAT traversal in WebRTC. You can find a very didactic and comprehensive explanation of ICE <a href=\"http:\/\/www.slideshare.net\/saghul\/ice-4414037\">here<\/a>. ICE is complex enough to deserve its own post, but I will try to explain its SDP lines in an understandable way.<\/p><p>Relay candidate for RTP over UDP - next we have the relay candidates. Those candidates are obtained from a TURN server which must be provisioned when creating the peer connection. Note that the priority here is lower than the host and reflex candidates (25108222 is higher) so the relay will be used only if  there is not IP connectivity between host and reflex candidates. Just for your curiosity we used the open source <a href=\"coturn.net\">coturn<\/a> project in this test (see our post on that <a href=\"https:\/\/webrtchacks.com\/coturn\/\">here<\/a>). The first IP\/port couple corresponds to the IP and port assigned by the TURN server for this media session. <em>raddr<\/em> and <em>rport<\/em> correspond to the public IP and the public port through which the WebRTC enpoint is reaching Internet.<\/p>"
     },
     {
       "display": "line",
@@ -144,7 +144,7 @@
       "indent": "2",
       "section": "Audio Lines -> ICE Candidates",
       "lineText": "a=candidate:750991856 1 udp 25108223 237.30.30.30 58779 typ relay raddr 47.61.61.61 rport 54761 generation 0",
-      "description": "<p>ICE lines are the mechanism chosen for NAT traversal in WebRTC. You can find a very didactic and comprehensive explanation of ICE <a href=\"http:\/\/www.slideshare.net\/saghul\/ice-4414037\">here<\/a>. ICE is complex enough to deserve its own post, but I will try to explain its SDP lines in an understandable way.<\/p><p>Relay candidate for RTCP over UDP - next we have the relay candidates. Those candidates are obtained from a TURN server which must be provisioned when creating the peer connection. Note that the priority here is lower than the host and reflex candidates (2157334355 is higher) so the relay will be used only if “hole punching” is not working with host and reflex candidates. Just for your curiosity we used the open source <a href=\"coturn.net\">coturn<\/a> project in this test (see our post on that <a href=\"https:\/\/webrtchacks.com\/coturn\/\">here<\/a>).<\/p>"
+      "description": "<p>ICE is the protocol chosen for NAT traversal in WebRTC. You can find a very didactic and comprehensive explanation of ICE <a href=\"http:\/\/www.slideshare.net\/saghul\/ice-4414037\">here<\/a>. ICE is complex enough to deserve its own post, but I will try to explain its SDP lines in an understandable way.<\/p><p>Relay candidate for RTCP over UDP - next we have the relay candidates. Those candidates are obtained from a TURN server which must be provisioned when creating the peer connection. Note that the priority here is lower than the host and reflex candidates (25108222 is higher) so the relay will be used only if “hole punching” is not working with host and reflex candidates. Just for your curiosity we used the open source <a href=\"coturn.net\">coturn<\/a> project in this test (see our post on that <a href=\"https:\/\/webrtchacks.com\/coturn\/\">here<\/a>). The first IP\/port couple corresponds to the IP and port assigned by the TURN server for this media session. <em>raddr<\/em> and <em>rport<\/em> correspond to the public IP and the public port through which the WebRTC enpoint is reaching Internet.<\/p>"
     },
     {
       "display": "grouping",
@@ -166,7 +166,7 @@
       "indent": "2",
       "section": "Audio Lines -> ICE Parameters",
       "lineText": "a=ice-pwd:T0teqPLNQQOf+5W+ls+P2p16",
-      "description": "Once the ICE candidates are exchanged, a verification process starts where both browsers try to reach each other using the candidates provided. The <em>ice-ufgra<\/em> and <em>ice-pwd<\/em> credentials are used in that process to avoid receiving potentials attacks from endpoints that are not involved in the session who could potentially create a media session without authorization."
+      "description": "Once the ICE candidates have been exchanged, a verification process starts where both browsers try to reach each other using the candidates provided. The <em>ice-ufgra<\/em> and <em>ice-pwd<\/em> credentials are used in that process to avoid receiving potentials attacks from endpoints that are not involved in the session who could potentially create a media session without authorization."
     },
     {
       "display": "grouping",
@@ -279,7 +279,8 @@
       "lineNum": "30",
       "indent": "2",
       "section": "Audio Lines -> Codec Parameters",
-      "lineText": "a=rtpmap:9 G722\/8000"
+      "lineText": "a=rtpmap:9 G722\/8000",
+      "description": "G722 is a wideband audio codec operating at 48, 56 and 64 kbit\/s which provides improved speech quality due to a wider speech bandwidth of 50–7000 Hz compared to narrowband speech coders like G.711. "
     },
     {
       "display": "line",
@@ -349,7 +350,7 @@
       "indent": "2",
       "section": "Audio Lines -> SSRC Parameters",
       "lineText": "a=ssrc:3570614608 cname:4TOk42mSjXCkVIa6",
-      "description": "The <em>cname<\/em> source attribute associates a media source with its <a href=\"http:\/\/www.freesoft.org\/CIE\/RFC\/1889\/24.htm\">Canonical End-Point Identifier<\/a> which will remain constant for the RTP media stream. This is the value that the media sender will place in its <a href=\"https:\/\/tools.ietf.org\/html\/rfc3550#section-6.5\">RTCP SDES<\/a> packets."
+      "description": "The <em>cname<\/em> source attribute associates a media source with its <a href=\"http:\/\/www.freesoft.org\/CIE\/RFC\/1889\/24.htm\">Canonical End-Point Identifier<\/a> which will remain constant for the RTP media stream even when the ssrc identifier changes if a conflict is found. This is the value that the media sender will place in its <a href=\"https:\/\/tools.ietf.org\/html\/rfc3550#section-6.5\">RTCP SDES<\/a> packets."
     },
     {
       "display": "line",
@@ -357,7 +358,7 @@
       "indent": "2",
       "section": "Audio Lines -> SSRC Parameters",
       "lineText": "a=ssrc:3570614608 msid:lgsCFqt9kN2fVKw5wg3NKqGdATQoltEwOdMS 35429d94-5637-4686-9ecd-7d0622261ce8",
-      "description": "This line is used to signal the association between the RTP concept of SSRC and the WebRTC concept of “media stream” \/ “media stream track” using SDP signaling [<a href=\"http:\/\/tools.ietf.org\/html\/draft-ietf-mmusic-msid\">draft-ietf-mmusic-msid<\/a>]. As you can see, the first number is the SSRC identifier that will be included in the SSRC field of the RTP packets. Following <em>msid<\/em>: we have the unique identifier included  in the semantic."
+      "description": "This line is used to signal the association between the RTP concept of SSRC and the WebRTC concept of “media stream” \/ “media stream track” using SDP signaling [<a href=\"http:\/\/tools.ietf.org\/html\/draft-ietf-mmusic-msid\">draft-ietf-mmusic-msid<\/a>]. The first parameter corresponds to the id of the Media Stream and the second onde the if of the Media Stream Track. These ids are handled in the WebRTC API. The first number is the SSRC identifier that will be included in the SSRC field of the RTP packets. "
     },
     {
       "display": "line",
@@ -365,7 +366,7 @@
       "indent": "2",
       "section": "Audio Lines -> SSRC Parameters",
       "lineText": "a=ssrc:3570614608 mslabel:lgsCFqt9kN2fVKw5wg3NKqGdATQoltEwOdMS",
-      "description": "Honestly, I has not been able to totally understand the <em>mslabel<\/em> attribute. Looking at this <a href=\"http:\/\/www.ietf.org\/mail-archive\/web\/mmusic\/current\/msg09780.html\">mail thread<\/a> I understand that is a deprecated attribute which a function similar to msid."
+      "description": "The <em>mslabel<\/em> attribute referes to the id of the Media Stream object. Acording these references <a \"http:\/\/www.ietf.org\/mail-archive\/web\/mmusic\/current\/msg09712.html\">[1]<\/a> <a \"https:\/\/lists.w3.org\/Archives\/Public\/public-webrtc\/2014Sep\/0058.html\">[2]<\/a> the parameter is deprecated and <em>msid<\/em> replaces it. <em>mslabel<\/em> is kept for backward compability."
     },
     {
       "display": "line",
@@ -373,7 +374,7 @@
       "indent": "2",
       "section": "Audio Lines -> SSRC Parameters",
       "lineText": "a=ssrc:3570614608 label:35429d94-5637-4686-9ecd-7d0622261ce8",
-      "description": "The <em>label<\/em> attribute carries a pointer to a RTP media stream in the context of an arbitrary network application that uses SDP. This label can be used to  refer to each particular media stream in its context."
+      "description": "The <em>label<\/em> attribute is also deprecated by <em>msid<\/em> and carries a pointer to a RTP media stream in the context of an arbitrary network application that uses SDP. This label correspondes with the <em>Media Stream Track<\/em> id in the WebRTC API, which is included in the <em>msid<\/em> line. "
     },
     {
       "display": "grouping",
@@ -410,76 +411,71 @@
       "lineNum": "9",
       "indent": "2",
       "section": "ICE Candidates",
-      "description": "Next we have the ICE lines, which is the mechanism chosen for NAT traversal in WebRTC. You can find a very didactic and comprehensive explanation of ICE <a href=\"http:\/\/www.slideshare.net\/saghul\/ice-4414037\">here<\/a>. ICE is complex enough to deserve its own post, but I will try to explain its SDP lines in an understandable way."
+      "description": "Next we have the ICE candidates. ICE is the protocol chosen to handle NAT traversal in WebRTC. You can find a very didactic and comprehensive explanation of ICE <a href=\"http:\/\/www.slideshare.net\/saghul\/ice-4414037\">here<\/a>. ICE is complex enough to deserve its own post, but I will try to explain its SDP lines in an understandable way."
     },
     {
       "display": "line",
       "lineNum": "45",
       "indent": "2",
       "section": "ICE Candidates",
-      "lineText": "a=candidate:1467250027 1 udp 2122260223 192.168.0.196 56143 typ host generation 0"
+      "lineText": "a=candidate:1467250027 1 udp 2122260223 192.168.0.196 56143 typ host generation 0",
+      "description": "<p>Next we have the ICE candidates. ICE is the protocol chosen to handle NAT traversal in WebRTC. You can find a very didactic and comprehensive explanation of ICE <a href=\"http:\/\/www.slideshare.net\/saghul\/ice-4414037\">here<\/a>. ICE is complex enough to deserve its own post, but I will try to explain its SDP lines in an understandable way.<\/p><p>Host candidate for RTP on UDP - in this ICE line our browser is giving its host candidates- the IP of the interface or interfaces the browser is listening on the computer. The browser can receive\/send SRTP and SRTCP on that IP in case there is IP visibility with some candidate of the remote peer. For example, if the other computer is on the same LAN, hosts candidates will be used. The number after the protocol (udp) – 2122260223 - is the priority of the candidate. Notice that priority of host candidates is the higher than other candidates as using host candidates are more efficient in terms of network resources use. The first lines (component= 1) is for RTP and second line (component = 2) is for RTCP. After the priority the IP of the local interface and the port to be used are included.<\/p>"
     },
     {
       "display": "line",
       "lineNum": "46",
       "indent": "2",
       "section": "ICE Candidates",
-      "lineText": "a=candidate:1170332293 1 udp 2122194687 192.168.0.195 59179 typ host generation 0"
+      "lineText": "a=candidate:1467250027 2 udp 2122260222 192.168.0.196 58874 typ host generation 0",
+      "description": "<p>Host candidate for RTP on UDP - in this ICE line our browser is giving its host candidates- the IP of the interface or interfaces the browser is listening on the computer. The browser can receive\/send SRTP and SRTCP on that IP in case there is IP visibility with some candidate of the remote peer. For example, if the other computer is on the same LAN, hosts candidates will be used. The number after the protocol (udp) – 2122260223 - is the priority of the candidate. Notice that priority of host candidates is the higher than other candidates as using host candidates are more efficient in terms of network resources use. The first lines (component= 1) is for RTP and second line (component = 2) is for RTCP. After the priority the IP of the local interface and the port to be used are included.  Please note that when the browser sends the offer it does not know if the other end will support rtcp-mux, so a port for RTCP has to be offered.<\/p>"
     },
     {
       "display": "line",
       "lineNum": "47",
       "indent": "2",
       "section": "ICE Candidates",
-      "lineText": "a=candidate:1467250027 2 udp 2122260222 192.168.0.196 58874 typ host generation 0"
+      "lineText": "a=candidate:435653019 1 tcp 1518280447 192.168.0.196 0 typ host tcptype active generation 0",
+      "description": "<p>ICE is the protocol chosen for NAT traversal in WebRTC. You can find a very didactic and comprehensive explanation of ICE <a href=\"http:\/\/www.slideshare.net\/saghul\/ice-4414037\">here<\/a>. ICE is complex enough to deserve its own post, but I will try to explain its SDP lines in an understandable way.<\/p><p>Host candidate for RTP over TCP - These lines are the same as the two ICE lines before but for TCP traffic. Please note that the priority is the lower – i.e 1845501695 is larger - as TCP is not optimal for real-time media transportation.<\/p>"
     },
     {
       "display": "line",
       "lineNum": "48",
       "indent": "2",
       "section": "ICE Candidates",
-      "lineText": "a=candidate:1170332293 2 udp 2122194686 192.168.0.195 58722 typ host generation 0"
+      "lineText": "a=candidate:435653019 2 tcp 1518280446 192.168.0.196 0 typ host tcptype active generation 0",
+      "description": "<p>ICE is the protocol chosen for NAT traversal in WebRTC. You can find a very didactic and comprehensive explanation of ICE <a href=\"http:\/\/www.slideshare.net\/saghul\/ice-4414037\">here<\/a>. ICE is complex enough to deserve its own post, but I will try to explain its SDP lines in an understandable way.<\/p><p>Host candidate for RTP over TCP - These lines are the same as the two ICE lines before but for TCP traffic. Please note that the priority is the lower – i.e 1845501695 is larger - as TCP is not optimal for real-time media transportation. When the browser sends the offer it does not know if the other end will support rtcp-mux, so a port for RTCP has to be offered.<\/p>"
     },
     {
       "display": "line",
       "lineNum": "49",
       "indent": "2",
       "section": "ICE Candidates",
-      "lineText": "a=candidate:435653019 1 tcp 1518280447 192.168.0.196 0 typ host tcptype active generation 0"
+      "lineText": "a=candidate:1853887674 1 udp 1518280447 47.61.61.61 36768 typ srflx raddr 192.168.0.196 rport 36768 generation 0",
+      "description": "<p>ICE is the protocol chosen for NAT traversal in WebRTC. You can find a very didactic and comprehensive explanation of ICE <a href=\"http:\/\/www.slideshare.net\/saghul\/ice-4414037\">here<\/a>. ICE is complex enough to deserve its own post, but I will try to explain its SDP lines in an understandable way.<\/p><p>Host candidate for RTP over TCP - These lines are the same as the two ICE lines before but for TCP traffic. Please note that the priority is the lower – i.e 1845501695 is larger - as TCP is not optimal for real-time media transportation. When the browser sends the offer it does not know if the other end will support rtcp-mux, so a port for RTCP has to be offered.<\/p>"
     },
     {
       "display": "line",
       "lineNum": "50",
       "indent": "2",
       "section": "ICE Candidates",
-      "lineText": "a=candidate:188884597 1 tcp 1518214911 192.168.0.195 0 typ host tcptype active generation 0"
+      "lineText": "a=candidate:1853887674 1 udp 1518280447 47.61.61.61 36768 typ srflx raddr 192.168.0.196 rport 36768 generation 0",
+      "description": "<p>ICE is the protocol chosen for NAT traversal in WebRTC. You can find a very didactic and comprehensive explanation of ICE <a href=\"http:\/\/www.slideshare.net\/saghul\/ice-4414037\">here<\/a>. ICE is complex enough to deserve its own post, but I will try to explain its SDP lines in an understandable way.<\/p><p>Host candidate for RTP over TCP - These lines are the same as the two ICE lines before but for TCP traffic. Please note that the priority is the lower – i.e 1845501695 is larger - as TCP is not optimal for real-time media transportation. When the browser sends the offer it does not know if the other end will support rtcp-mux, so a port for RTCP has to be offered.<\/p>"
     },
     {
       "display": "line",
       "lineNum": "51",
       "indent": "2",
       "section": "ICE Candidates",
-      "lineText": "a=candidate:435653019 2 tcp 1518280446 192.168.0.196 0 typ host tcptype active generation 0"
+      "lineText": "a=candidate:750991856 1 udp 25108223 237.30.30.30 60372 typ relay raddr 47.61.61.61 rport 54765 generation 0",
+      "description": "<p>ICE is the protocol chosen for NAT traversal in WebRTC. You can find a very didactic and comprehensive explanation of ICE <a href=\"http:\/\/www.slideshare.net\/saghul\/ice-4414037\">here<\/a>. ICE is complex enough to deserve its own post, but I will try to explain its SDP lines in an understandable way.<\/p><p>Relay candidate for RTP over UDP - next we have the relay candidates. Those candidates are obtained from a TURN server which must be provisioned when creating the peer connection. Note that the priority here is lower than the host and reflex candidates (2157334355 is higher) so the relay will be used only if there is not Ip connectivity between host and reflex candidates. Just for your curiosity we used the open source <a href=\"coturn.net\">coturn<\/a> project in this test (see our post on that <a href=\"https:\/\/webrtchacks.com\/coturn\/\">here<\/a>). The first IP\/port couple corresponds to the IP and port assigned by the TURN server for this media session. <em>raddr<\/em> and <em>rport<\/em> crrespond to the public IP and the public port through which the WebRTC enpoint is reaching Internet.<\/p>"
     },
     {
       "display": "line",
       "lineNum": "52",
       "indent": "2",
-      "lineText": "a=candidate:188884597 2 tcp 1518214910 192.168.0.195 0 typ host tcptype active generation 0"
-    },
-    {
-      "display": "line",
-      "lineNum": "53",
-      "indent": "2",
       "section": "ICE Candidates",
-      "lineText": "a=candidate:750991856 1 udp 25108223 237.30.30.30 60372 typ relay raddr 47.61.7.109 rport 54765 generation 0"
-    },
-    {
-      "display": "line",
-      "lineNum": "54",
-      "indent": "2",
-      "section": "ICE Candidates",
-      "lineText": "a=candidate:750991856 2 udp 25108222 237.30.30.30 64891 typ relay raddr 47.61.7.109 rport 54767 generation 0"
+      "lineText": "a=candidate:750991856 2 udp 25108222 237.30.30.30 64891 typ relay raddr 47.61.61.61 rport 54767 generation 0",
+      "description": "<p>ICE is the protocol chosen for NAT traversal in WebRTC. You can find a very didactic and comprehensive explanation of ICE <a href=\"http:\/\/www.slideshare.net\/saghul\/ice-4414037\">here<\/a>. ICE is complex enough to deserve its own post, but I will try to explain its SDP lines in an understandable way.<\/p><p>Relay candidate for RTP over UDP - next we have the relay candidates. Those candidates are obtained from a TURN server which must be provisioned when creating the peer connection. Note that the priority here is lower than the host and reflex candidates (2157334355 is higher) so the relay will be used only if “hole punching” is not working with host and reflex candidates. Just for your curiosity we used the open source <a href=\"coturn.net\">coturn<\/a> project in this test (see our post on that <a href=\"https:\/\/webrtchacks.com\/coturn\/\">here<\/a>). The first IP\/port couple corresponds to the IP and port assigned by the TURN server for this media session. <em>raddr<\/em> and <em>rport<\/em> correspond to the public IP and the public port through which the WebRTC enpoint is reaching Internet.<\/p>"
     },
     {
       "display": "grouping",
@@ -489,19 +485,19 @@
     },
     {
       "display": "line",
-      "lineNum": "55",
+      "lineNum": "53",
       "indent": "2",
       "section": "ICE Parameters",
       "lineText": "a=ice-ufrag:Oyef7uvBlwafI3hT",
-      "description": "Once the ICE candidates are exchanged, a verification process starts where both browsers try to reach each other using the candidates provided. The <em>ice-ufgra<\/em> and <em>ice-pwd<\/em> credentials are used in that process to avoid receiving potentials attacks from endpoints that are not involved in the session who could potentially create a media session without authorization."
+      "description": "Once the ICE candidates have been exchanged, a verification process starts where both browsers try to reach each other using the candidates provided. The <em>ice-ufgra<\/em> and <em>ice-pwd<\/em> credentials are used in that process to avoid receiving potentials attacks from endpoints that are not involved in the session who could potentially create a media session without authorization."
     },
     {
       "display": "line",
-      "lineNum": "56",
+      "lineNum": "54",
       "indent": "2",
       "section": "ICE Parameters",
       "lineText": "a=ice-pwd:T0teqPLNQQOf+5W+ls+P2p16",
-      "description": "Once the ICE candidates are exchanged, a verification process starts where both browsers try to reach each other using the candidates provided. The <em>ice-ufgra<\/em> and <em>ice-pwd<\/em> credentials are used in that process to avoid receiving potentials attacks from endpoints that are not involved in the session who could potentially create a media session without authorization."
+      "description": "Once the ICE candidates have been exchanged, a verification process starts where both browsers try to reach each other using the candidates provided. The <em>ice-ufgra<\/em> and <em>ice-pwd<\/em> credentials are used in that process to avoid receiving potentials attacks from endpoints that are not involved in the session who could potentially create a media session without authorization."
     },
     {
       "display": "grouping",
@@ -511,7 +507,7 @@
     },
     {
       "display": "line",
-      "lineNum": "57",
+      "lineNum": "55",
       "indent": "2",
       "section": "Video Lines -> DTLS Parameters",
       "lineText": "a=fingerprint:sha-256 49:66:12:17:0D:1C:91:AE:57:4C:C6:36:DD:D5:97:D2:7D:62:C9:9A:7F:B9:A3:F4:70:03:E7:43:91:73:23:5E",
@@ -519,7 +515,7 @@
     },
     {
       "display": "line",
-      "lineNum": "58",
+      "lineNum": "56",
       "indent": "2",
       "section": "Video Lines -> DTLS Parameters",
       "lineText": "a=setup:actpass",
@@ -533,7 +529,7 @@
     },
     {
       "display": "line",
-      "lineNum": "59",
+      "lineNum": "57",
       "indent": "1",
       "section": "Video Lines",
       "lineText": "a=mid:video",
@@ -541,7 +537,7 @@
     },
     {
       "display": "line",
-      "lineNum": "60",
+      "lineNum": "58",
       "indent": "1",
       "section": "Video Lines",
       "lineText": "a=extmap:2 urn:ietf:params:rtp-hdrext:toffset",
@@ -549,7 +545,7 @@
     },
     {
       "display": "line",
-      "lineNum": "61",
+      "lineNum": "59",
       "indent": "1",
       "section": "Video Lines",
       "lineText": "a=extmap:3 http:\/\/www.webrtc.org\/experiments\/rtp-hdrext\/abs-send-time",
@@ -557,7 +553,7 @@
     },
     {
       "display": "line",
-      "lineNum": "62",
+      "lineNum": "60",
       "indent": "1",
       "section": "Video Lines",
       "lineText": "a=extmap:4 urn:3gpp:video-orientation",
@@ -565,7 +561,7 @@
     },
     {
       "display": "line",
-      "lineNum": "63",
+      "lineNum": "61",
       "indent": "1",
       "section": "Video Lines",
       "lineText": "a=sendrecv",
@@ -573,7 +569,7 @@
     },
     {
       "display": "line",
-      "lineNum": "64",
+      "lineNum": "62",
       "indent": "1",
       "section": "Video Lines",
       "lineText": "a=rtcp-mux",
@@ -587,7 +583,7 @@
     },
     {
       "display": "line",
-      "lineNum": "65",
+      "lineNum": "63",
       "indent": "2",
       "section": "Video Lines -> Codec Parameters",
       "lineText": "a=rtpmap:100 VP8\/90000",
@@ -595,7 +591,7 @@
     },
     {
       "display": "line",
-      "lineNum": "66",
+      "lineNum": "64",
       "indent": "2",
       "section": "Video Lines -> Codec Parameters",
       "lineText": "a=rtcp-fb:100 ccm fir",
@@ -603,22 +599,23 @@
     },
     {
       "display": "line",
-      "lineNum": "67",
+      "lineNum": "65",
       "indent": "2",
       "section": "Video Lines -> Codec Parameters",
       "lineText": "a=rtcp-fb:100 nack",
-      "description": "This lines requests the use of Negative ACKs (nack) as indicated in <a href=\"https:\/\/tools.ietf.org\/html\/rfc4585\">RFC 4585<\/a>."
+      "description": "This lines requests the use of Negative ACKs (nack) as indicated in <a href=\"https:\/\/tools.ietf.org\/html\/rfc4585\">RFC 4585<\/a>. This allows to make the other end aware about packet losses.  "
     },
     {
       "display": "line",
-      "lineNum": "68",
+      "lineNum": "66",
       "indent": "2",
       "section": "Video Lines -> Codec Parameters",
-      "lineText": "a=rtcp-fb:100 nack pli"
+      "lineText": "a=rtcp-fb:100 nack pli",
+      "description": "This lines states that PLI NACK RTCP messages are supported. This allows to ask for a new VP8 key frame the other endpoint when video packets have been lost. Please refer to <a href=\"https:\/\/tools.ietf.org\/html\/rfc4585#page-36\">RFC4585<\/a> for more information."
     },
     {
       "display": "line",
-      "lineNum": "69",
+      "lineNum": "67",
       "indent": "2",
       "section": "Video Lines -> Codec Parameters",
       "lineText": "a=rtcp-fb:100 goog-remb",
@@ -626,7 +623,7 @@
     },
     {
       "display": "line",
-      "lineNum": "70",
+      "lineNum": "68",
       "indent": "2",
       "section": "Video Lines -> Codec Parameters",
       "lineText": "a=rtpmap:101 VP9\/90000",
@@ -634,7 +631,7 @@
     },
     {
       "display": "line",
-      "lineNum": "71",
+      "lineNum": "69",
       "indent": "2",
       "section": "Video Lines -> Codec Parameters",
       "lineText": "a=rtcp-fb:101 ccm fir",
@@ -642,22 +639,23 @@
     },
     {
       "display": "line",
-      "lineNum": "72",
+      "lineNum": "70",
       "indent": "2",
       "section": "Video Lines -> Codec Parameters",
       "lineText": "a=rtcp-fb:101 nack",
-      "description": "This lines requests the use of Negative ACKs (nack) as indicated in <a href=\"https:\/\/tools.ietf.org\/html\/rfc4585\">RFC 4585<\/a>."
+      "description": "This lines requests the use of Negative ACKs (nack) as indicated in <a href=\"https:\/\/tools.ietf.org\/html\/rfc4585\">RFC 4585<\/a>. This allows to make the other end aware about packet losses.  "
     },
     {
       "display": "line",
-      "lineNum": "73",
+      "lineNum": "71",
       "indent": "2",
       "section": "Video Lines -> Codec Parameters",
-      "lineText": "a=rtcp-fb:101 nack pli"
+      "lineText": "a=rtcp-fb:101 nack pli",
+      "description": "This lines states that PLI NACK RTCP messages are supported. This allows to ask for a new VP9 key frame the other endpoint when video packets have been lost. Please refer to <a href=\"https:\/\/tools.ietf.org\/html\/rfc4585#page-36\">RFC4585<\/a> for more information."
     },
     {
       "display": "line",
-      "lineNum": "74",
+      "lineNum": "72",
       "indent": "2",
       "section": "Video Lines -> Codec Parameters",
       "lineText": "a=rtcp-fb:101 goog-remb",
@@ -665,7 +663,7 @@
     },
     {
       "display": "line",
-      "lineNum": "75",
+      "lineNum": "73",
       "indent": "2",
       "section": "Video Lines -> Codec Parameters",
       "lineText": "a=rtpmap:116 red\/90000",
@@ -673,7 +671,7 @@
     },
     {
       "display": "line",
-      "lineNum": "76",
+      "lineNum": "74",
       "indent": "2",
       "section": "Video Lines -> Codec Parameters",
       "lineText": "a=rtpmap:117 ulpfec\/90000",
@@ -681,7 +679,7 @@
     },
     {
       "display": "line",
-      "lineNum": "77",
+      "lineNum": "75",
       "indent": "2",
       "section": "Video Lines -> Codec Parameters",
       "lineText": "a=rtpmap:96 rtx\/90000",
@@ -689,7 +687,7 @@
     },
     {
       "display": "line",
-      "lineNum": "78",
+      "lineNum": "76",
       "indent": "2",
       "section": "Video Lines -> Codec Parameters",
       "lineText": "a=fmtp:96 apt=100",
@@ -703,7 +701,7 @@
     },
     {
       "display": "line",
-      "lineNum": "79",
+      "lineNum": "77",
       "indent": "2",
       "section": "Video Lines -> SSRC Parameters",
       "lineText": "a=ssrc-group:FID 2231627014 632943048",
@@ -711,7 +709,7 @@
     },
     {
       "display": "line",
-      "lineNum": "80",
+      "lineNum": "78",
       "indent": "2",
       "section": "Video Lines -> SSRC Parameters",
       "lineText": "a=ssrc:2231627014 cname:4TOk42mSjXCkVIa6",
@@ -719,7 +717,7 @@
     },
     {
       "display": "line",
-      "lineNum": "81",
+      "lineNum": "79",
       "indent": "2",
       "section": "Video Lines -> SSRC Parameters",
       "lineText": "a=ssrc:2231627014 msid:lgsCFqt9kN2fVKw5wg3NKqGdATQoltEwOdMS daed9400-d0dd-4db3-b949-422499e96e2d",
@@ -727,7 +725,7 @@
     },
     {
       "display": "line",
-      "lineNum": "82",
+      "lineNum": "80",
       "indent": "2",
       "section": "Video Lines -> SSRC Parameters",
       "lineText": "a=ssrc:2231627014 mslabel:lgsCFqt9kN2fVKw5wg3NKqGdATQoltEwOdMS",
@@ -735,7 +733,7 @@
     },
     {
       "display": "line",
-      "lineNum": "83",
+      "lineNum": "81",
       "indent": "2",
       "section": "Video Lines -> SSRC Parameters",
       "lineText": "a=ssrc:2231627014 label:daed9400-d0dd-4db3-b949-422499e96e2d",
@@ -743,7 +741,7 @@
     },
     {
       "display": "line",
-      "lineNum": "84",
+      "lineNum": "82",
       "indent": "2",
       "section": "Video Lines -> SSRC Parameters",
       "lineText": "a=ssrc:632943048 cname:4TOk42mSjXCkVIa6",
@@ -751,7 +749,7 @@
     },
     {
       "display": "line",
-      "lineNum": "85",
+      "lineNum": "83",
       "indent": "2",
       "section": "Video Lines -> SSRC Parameters",
       "lineText": "a=ssrc:632943048 msid:lgsCFqt9kN2fVKw5wg3NKqGdATQoltEwOdMS daed9400-d0dd-4db3-b949-422499e96e2d",

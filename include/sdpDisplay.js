@@ -3,17 +3,32 @@
  * Created by chad on 4/23/16.
  */
 
+
+$(document).ready(function(){
     //Load & display the data
-$.getJSON("//raw.githubusercontent.com/webrtcHacks/sdp-anatomy/bootstrap/sdpdata.json", function (sdpdata) {
-    var data = sdpdata.sdpdata;
-    if (sdpdata.sdpdata.length > 0) {
-        console.log(sdpdata.sdpdata.length + " SDP description lines loaded");
-        displayData(data)
-    }
-    else {
-        console.log("SDP data load error");
-    }
+    $.getJSON("//raw.githubusercontent.com/webrtcHacks/sdp-anatomy/bootstrap/sdpdata.json", function (sdpdata) {
+        var data = sdpdata.sdpdata;
+        if (sdpdata.sdpdata.length > 0) {
+            console.log(sdpdata.sdpdata.length + " SDP description lines loaded");
+            displayData(data)
+        }
+        else {
+            console.log("SDP data load error");
+        }
+    });
+
+    //Keep the description window in view
+    //ToDo: see why I couldn't get bootstrap's affix towork
+    var startPos = $("#description").offset().top;
+    $(window).scroll(function(){
+       var y = parseInt(startPos - $(document).scrollTop());
+       $('#description').css({'top': (y<0) ? 30:y });
+
+    });
+
 });
+
+
 
 function displayData(data) {
     //Setup our left-side display
@@ -82,4 +97,7 @@ function displayData(data) {
 
         $('#description').html(descriptionText);
     });
+
+
+
 }
