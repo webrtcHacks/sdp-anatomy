@@ -13,8 +13,7 @@
 
 /******app CSS classes******/
 .section-label {
-    margin: 5px;
-    vertical-align: top;
+    margin: 10px !important;
     font-weight: bold;
     font-size: larger;
     text-align: right;
@@ -30,7 +29,7 @@
     word-break: break-all;
 }
 .description-body {
-    margin-top: 10px;
+    margin-top: 10px !important;
 }
 
 #description {
