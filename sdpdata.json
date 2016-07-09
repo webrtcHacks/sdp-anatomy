@@ -705,7 +705,7 @@
       "indent": "2",
       "section": "Video Lines -> SSRC Parameters",
       "lineText": "a=ssrc-group:FID 2231627014 632943048",
-      "description": "The <em>cname<\/em> source attribute associates a media source with its <a href=\"http:\/\/www.freesoft.org\/CIE\/RFC\/1889\/24.htm\">Canonical End-Point Identifier<\/a> which will remain constant for the RTP media stream. This is the value that the media sender will place in its <a href=\"https:\/\/tools.ietf.org\/html\/rfc3550#section-6.5\">RTCP SDES<\/a> packets."
+      "description": "This line declares that SSRC 632943048 is a rtx repair flow (<a href=\"https:\/\/tools.ietf.org/html/rfc4588\">RFC4588<\/a>) for 2231627014 as specified in <a href=\"https:\/\/tools.ietf.org/html/rfc5576\">RFC5576<\/a>"
     },
     {
       "display": "line",
