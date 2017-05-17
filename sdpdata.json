@@ -12,7 +12,7 @@
       "indent": "0",
       "section": "Global Lines",
       "lineText": "o=- 4611731400430051336 2 IN IP4 127.0.0.1",
-      "description": "The first number is the session id, an unique identifier for the session . The number in second position - 2 -  is the session version: if a new offer\/answer negotiation is needed during this media session this number will be increased by one. This will happen when any parameter need to be changed in the media session such as on-hold, codec-change, add-remove media track. The three following fields are the network type (Internet), IP address type (version 4) and unicast address of the machine which created the SDP. These three values are not relevant for the negotiation."
+      "description": "The leading '-' is the username field, not used for WebRTC. The first number is the session id, an unique identifier for the session . The number in second position - 2 -  is the session version: if a new offer\/answer negotiation is needed during this media session this number will be increased by one. This will happen when any parameter need to be changed in the media session such as on-hold, codec-change, add-remove media track. The three following fields are the network type (Internet), IP address type (version 4) and unicast address of the machine which created the SDP. These three values are not relevant for the negotiation. Note that Firefox currently sends 0.0.0.0 as the unicast address, and Chrome sends 127.0.0.1"
     },
     {
       "display": "line",
@@ -57,24 +57,24 @@
       "lineNum": "6",
       "indent": "1",
       "section": "Audio Lines",
-      "lineText": "m=audio 58779 UDP\/TLS\/RTP\/SAVPF 111 103 104 9 0 8 106 105 13 126",
-      "description": "<p><em>m<\/em> means it is a media line –  it condenses a lot of information on the media attributes of the stream. In this order, it tells us:<ul><li><em>audio<\/em>- the media type is going to be used for the session (media types are registered at the IANA),<\/li><li><em>54278<\/em><span – the port is going to be used for SRTP (and for RTCP if RTCP multiplex is supported by the other peer),<\/li><li><em>RTP\/SAVPF<\/em>- the transport protocol is going to be used for the session, and last but not least<\/li><li><em>111 103 104 0 8 106 105 13 126<\/em>- the media format descriptions are supported by the browser to send and receive media.<\/li><\/ul>RTP\/SAVPF is defined in <a href=\"http:\/\/tools.ietf.org\/html\/rfc5124\">RFC5124<\/a>. In short it requires the use of SRTP and SRTCP and RTCP Feedback packets.<\/p><p>The media format descriptions, with protocol RTP\/SAVPF, gives the RTP payload numbers which are going to be used for the different formats.&nbsp; Payload numbers lower than 96 are mapped to encodingformats by the<a href=\"http:\/\/www.iana.org\/assignments\/rtp-parameters\/rtp-parameters.xhtml\">IANA<\/a>.&nbsp;In our SDP<em>0<\/em>maps to G711U and<em>8<\/em>to G711A. Format numbers larger than 95 are dynamic and there are <em>a=rtpmap:<\/em>&nbsp;attribute to map from the RTP payload type numbers to media encoding names.&nbsp; There are also<em>a=fmtp:<\/em> attributes which specify format parameters<\/p>"
+      "lineText": "m=audio 9 RTP\/SAVPF 111 103 104 9 0 8 106 105 13 126",
+      "description": "<p><em>m<\/em> means it is a media line –  it condenses a lot of information on the media attributes of the stream. In this order, it tells us:<ul><li><em>audio<\/em>- the media type is going to be used for the session (media types are registered at the IANA),<\/li><li><em>9<\/em> – the port is going to be used for SRTP (and for RTCP if RTCP multiplex is supported by the other peer) should always be 9 in webrtc to indicate the \"discard\" protocol.,<\/li><li><em>RTP\/SAVPF<\/em> - the transport protocol is going to be used for the session, and last but not least<\/li><li><em>111 103 104 0 8 106 105 13 126<\/em> - the media format descriptions are supported by the browser to send and receive media.<\/li><\/ul>RTP\/SAVPF is defined in <a href=\"http:\/\/tools.ietf.org\/html\/rfc5124\">RFC5124<\/a>. In short it requires the use of SRTP and SRTCP and RTCP Feedback packets.<\/p><p>The media format descriptions, with protocol RTP\/SAVPF, gives the RTP payload numbers which are going to be used for the different formats.&nbsp; Payload numbers lower than 96 are mapped to encoding formats by the <a href=\"http:\/\/www.iana.org\/assignments\/rtp-parameters\/rtp-parameters.xhtml\">IANA<\/a>.&nbsp;In our SDP<em>0<\/em>maps to G711U and<em>8<\/em>to G711A. Format numbers larger than 95 are dynamic and there are <em>a=rtpmap:<\/em>&nbsp;attribute to map from the RTP payload type numbers to media encoding names.&nbsp; There are also<em>a=fmtp:<\/em> attributes which specify format parameters<\/p>"
     },
     {
       "display": "line",
       "lineNum": "7",
       "indent": "1",
       "section": "Audio Lines",
-      "lineText": "c=IN IP4 217.130.243.155",
-      "description": "<em>c<\/em> is a connection line. This line gives the IP from where you expect to send and receive the real time traffic. As ICE is mandatory in WebRTC the IP in the c-line is not going to be used."
+      "lineText": "c=IN IP4 0.0.0.0",
+      "description": "<em>c<\/em> is a connection line. This line gives the IP from where you expect to send and receive the real time traffic. As ICE is mandatory in WebRTC the IP in the c-line is not going to be used. Firefox and Chrome both send 0.0.0.0"
     },
     {
       "display": "line",
       "lineNum": "8",
       "indent": "1",
       "section": "Audio Lines",
-      "lineText": "a=rtcp:51472 IN IP4 217.130.243.155",
-      "description": "This line explicitly specifies the IP and port that will used for RTCP, not derived from the base media port. Note that is the same port as for SRTP as RTCP multiplex is supported."
+      "lineText": "a=rtcp:9 IN IP4 0.0.0.0",
+      "description": "This line explicitly specifies the IP and port that will used for RTCP, not derived from the base media port. Note that is the same port as for SRTP if RTCP multiplex is supported. WebRTC uses ICE negotiation, so this should be port 9 on address 0.0.0.0"
     },
     {
       "display": "grouping",
@@ -103,7 +103,7 @@
       "lineNum": "11",
       "indent": "2",
       "section": "Audio Lines -> ICE Candidates",
-      "lineText": "a=candidate:435653019 1 tcp 1845501695 192.168.0.196 0 typ host tcptype active generation 0",
+      "lineText": "a=candidate:435653019 1 tcp 1845501695 192.168.0.196 9 typ host tcptype active generation 0",
       "description": "<p>ICE is the protocol chosen for NAT traversal in WebRTC. You can find a very didactic and comprehensive explanation of ICE <a href=\"http:\/\/www.slideshare.net\/saghul\/ice-4414037\">here<\/a>. ICE is complex enough to deserve its own post, but I will try to explain its SDP lines in an understandable way.<\/p><p>Host candidate for RTP over TCP - These lines are the same as the two ICE lines before but for TCP traffic. Please note that the priority is the lower – i.e 1845501695 is larger - as TCP is not optimal for real-time media transportation.<\/p>"
     },
     {
@@ -111,7 +111,7 @@
       "lineNum": "12",
       "indent": "2",
       "section": "Audio Lines -> ICE Candidates",
-      "lineText": "a=candidate:435653019 2 tcp 1845501695 192.168.0.196 0 typ host tcptype active generation 0",
+      "lineText": "a=candidate:435653019 2 tcp 1845501695 192.168.0.196 9 typ host tcptype active generation 0",
       "description": "<p>ICE is the protocol chosen for NAT traversal in WebRTC. You can find a very didactic and comprehensive explanation of ICE <a href=\"http:\/\/www.slideshare.net\/saghul\/ice-4414037\">here<\/a>. ICE is complex enough to deserve its own post, but I will try to explain its SDP lines in an understandable way.<\/p><p>Host candidate for RTCP over TCP - these lines are the same as the two ICE lines before but for TCP traffic. Please note that the priority is the lower – i.e 1845501695 is larger - as TCP is not optimal for real-time media transportation.<\/p>"
     },
     {
@@ -128,7 +128,7 @@
       "indent": "2",
       "section": "Audio Lines -> ICE Candidates",
       "lineText": "a=candidate:1853887674 2 udp 1518280447 47.61.61.61 36768 typ srflx raddr 192.168.0.196 rport 36768 generation 0",
-      "description": "<p>ICE lines are the mechanism chosen for NAT traversal in WebRTC. You can find a very didactic and comprehensive explanation of ICE <a href=\"http:\/\/www.slideshare.net\/saghul\/ice-4414037\">here<\/a>. ICE is complex enough to deserve its own post, but I will try to explain its SDP lines in an understandable way.<\/p><p>Reflexive candidate for RTCP over UDP - here we have the server reflexive candidates. Note that they have lower priority than host candidates. These candidates are discovered thanks to STUN server (see this <a href=\"http:\/\/webrtchacks.com\/stun-helps-webrtc-traverse-nats\/>post<\/a> to learn more). The couple public public IP-port are included after the priority. The couple private IP-port after <em>typ srflx raddr<em> are the private IP:Port related (there is a NAT binding) to the public IP:Port where the traffic is going to be received.<\/p>"
+      "description": "<p>ICE is the protocol chosen to handle NAT traversal in WebRTC. You can find a very didactic and comprehensive explanation of ICE <a href=\"http:\/\/www.slideshare.net\/saghul\/ice-4414037\">here<\/a>. ICE is complex enough to deserve its own post, but I will try to explain its SDP lines in an understandable way.<\/p><p>Reflexive candidate for RTCP over UDP - here we have the server reflexive candidates. Note that they have lower priority than host candidates. These candidates are discovered thanks to STUN server (see this <a href=\"http:\/\/webrtchacks.com\/stun-helps-webrtc-traverse-nats\/>post<\/a> to learn more). The couple public public IP-port are included after the priority. The couple private IP-port after <em>typ srflx raddr<em> are the private IP:Port related (there is a NAT binding) to the public IP:Port where the traffic is going to be received.<\/p>"
     },
     {
       "display": "line",
@@ -158,7 +158,7 @@
       "indent": "2",
       "section": "Audio Lines -> ICE Parameters",
       "lineText": "a=ice-ufrag:Oyef7uvBlwafI3hT",
-      "description": "Once the ICE candidates are exchanged, a verification process starts where both browsers try to reach each other using the candidates provided. The <em>ice-ufgra<\/em> and <em>ice-pwd<\/em> credentials are used in that process to avoid receiving potentials attacks from endpoints that are not involved in the session who could potentially create a media session without authorization."
+      "description": "Once the ICE candidates are exchanged, a verification process starts where both browsers try to reach each other using the candidates provided. The <em>ice-ufrag<\/em> and <em>ice-pwd<\/em> credentials are used in that process to avoid receiving potentials attacks from endpoints that are not involved in the session who could potentially create a media session without authorization."
     },
     {
       "display": "line",
@@ -210,7 +210,7 @@
       "indent": "1",
       "section": "Audio Lines",
       "lineText": "a=extmap:1 urn:ietf:params:rtp-hdrext:ssrc-audio-level",
-      "description": "RFC3550 defines the capability to extend the RTP header. This line defines extensions which will be used in RTP headers so that the receiver can decode it correctly and extract the metadata. In this case the browser is indicating that we are going to include information on the audio level in the RTP header as defined in RFC6464."
+      "description": "<a href=\"http:\/\/www.ietf.org\/rfc\/rfc3550.txt\">RFC3550<\/a> defines the capability to extend the RTP header. This line defines extensions which will be used in RTP headers so that the receiver can decode it correctly and extract the metadata. In this case the browser is indicating that we are going to include information on the audio level in the RTP header as defined in <a href=\"http:\/\/tools.ietf.org\/html\/rfc6464\">RFC6464<\/a>."
     },
     {
       "display": "line",
@@ -218,7 +218,7 @@
       "indent": "1",
       "section": "Audio Lines",
       "lineText": "a=extmap:3 http:\/\/www.webrtc.org\/experiments\/rtp-hdrext\/abs-send-time",
-      "description": "<a href=\"http:\/\/www.ietf.org\/rfc\/rfc3550.txt\">RFC3550<\/a> defines the capability to extend the RTP header. This line defines extensions which will be used in RTP headers so that the receiver can decode it correctly and extract the metadata. In this case the browser is indicating that we are going to include information on the audio level in the RTP header as defined in <a href=\"http:\/\/tools.ietf.org\/html\/rfc6464\">RFC6464<\/a>."
+      "description": "The Absolute Send Time extension is used to stamp RTP packets with a timestamp showing the departure time from the system that put this packet on the wire. See more details at: <a href=\"http:\/\/www.webrtc.org\/experiments\/rtp-hdrext\/abs-send-time\">http:\/\/www.webrtc.org\/experiments\/rtp-hdrext\/abs-send-time<\/a>"
     },
     {
       "display": "line",
@@ -387,8 +387,8 @@
       "lineNum": "42",
       "indent": "1",
       "section": "Video Lines",
-      "lineText": "m=video 60372 UDP\/TLS\/RTP\/SAVPF 100 101 116 117 96",
-      "description": "<p><em>m<\/em> means it is a media line –  it condenses a lot of information on the media attributes of the stream. In this order, it tells us:<ul><li><em>audio<\/em>- the media type is going to be used for the session (media types are registered at the IANA),<\/li><li><em>54278<\/em><span – the port is going to be used for SRTP (and for RTCP if RTCP multiplex is supported by the other peer),<\/li><li><em>RTP\/SAVPF<\/em>- the transport protocol is going to be used for the session, and last but not least<\/li><li><em>100 101 116 117 96<\/em> -  the media format descriptions are supported by the browser to send and receive media.<\/li><\/ul>RTP\/SAVPF is defined in <a href=\"http:\/\/tools.ietf.org\/html\/rfc5124\">RFC5124<\/a>. In short it requires the use of SRTP and SRTCP and RTCP Feedback packets.<\/p><p>The media format descriptions, with protocol RTP\/SAVPF, gives the RTP payload numbers which are going to be used for the different formats.&nbsp; Payload numbers lower than 96 are mapped to encodingformats by the<a href=\"http:\/\/www.iana.org\/assignments\/rtp-parameters\/rtp-parameters.xhtml\">IANA<\/a>.&nbsp;In our SDP<em>0<\/em>maps to G711U and<em>8<\/em>to G711A. Format numbers larger than 95 are dynamic and there are <em>a=rtpmap:<\/em>&nbsp;attribute to map from the RTP payload type numbers to media encoding names.&nbsp; There are also<em>a=fmtp:<\/em> attributes which specify format parameters<\/p>"
+      "lineText": "m=video 9 RTP\/SAVPF 100 101 116 117 96",
+      "description": "<p><em>m<\/em> means it is a media line –  it condenses a lot of information on the media attributes of the stream. In this order, it tells us:<ul><li><em>video<\/em> - the media type is going to be used for the session (media types are registered at the IANA),<\/li><li><em>9<\/em> – the port is going to be used for SRTP (and for RTCP if RTCP multiplex is supported by the other peer) should always be 9 in webrtc to indicate the \"discard\" protocol.,<\/li><li><em>RTP\/SAVPF<\/em> - the transport protocol is going to be used for the session, and last but not least<\/li><li><em>111 103 104 0 8 106 105 13 126<\/em> - the media format descriptions are supported by the browser to send and receive media.<\/li><\/ul>RTP\/SAVPF is defined in <a href=\"http:\/\/tools.ietf.org\/html\/rfc5124\">RFC5124<\/a>. In short it requires the use of SRTP and SRTCP and RTCP Feedback packets.<\/p><p>The media format descriptions, with protocol RTP\/SAVPF, gives the RTP payload numbers which are going to be used for the different formats.&nbsp; Payload numbers lower than 96 are mapped to encoding formats by the <a href=\"http:\/\/www.iana.org\/assignments\/rtp-parameters\/rtp-parameters.xhtml\">IANA<\/a>.&nbsp;In our SDP<em>0<\/em>maps to G711U and<em>8<\/em>to G711A. Format numbers larger than 95 are dynamic and there are <em>a=rtpmap:<\/em>&nbsp;attribute to map from the RTP payload type numbers to media encoding names.&nbsp; There are also<em>a=fmtp:<\/em> attributes which specify format parameters<\/p>"
     },
     {
       "display": "line",
@@ -419,7 +419,7 @@
       "indent": "2",
       "section": "ICE Candidates",
       "lineText": "a=candidate:1467250027 1 udp 2122260223 192.168.0.196 56143 typ host generation 0",
-      "description": "<p>Next we have the ICE candidates. ICE is the protocol chosen to handle NAT traversal in WebRTC. You can find a very didactic and comprehensive explanation of ICE <a href=\"http:\/\/www.slideshare.net\/saghul\/ice-4414037\">here<\/a>. ICE is complex enough to deserve its own post, but I will try to explain its SDP lines in an understandable way.<\/p><p>Host candidate for RTP on UDP - in this ICE line our browser is giving its host candidates- the IP of the interface or interfaces the browser is listening on the computer. The browser can receive\/send SRTP and SRTCP on that IP in case there is IP visibility with some candidate of the remote peer. For example, if the other computer is on the same LAN, hosts candidates will be used. The number after the protocol (udp) – 2122260223 - is the priority of the candidate. Notice that priority of host candidates is the higher than other candidates as using host candidates are more efficient in terms of network resources use. The first lines (component= 1) is for RTP and second line (component = 2) is for RTCP. After the priority the IP of the local interface and the port to be used are included.<\/p>"
+      "description": "<p>ICE is the protocol chosen to handle NAT traversal in WebRTC. You can find a very didactic and comprehensive explanation of ICE <a href=\"http:\/\/www.slideshare.net\/saghul\/ice-4414037\">here<\/a>. ICE is complex enough to deserve its own post, but I will try to explain its SDP lines in an understandable way.<\/p><p>Host candidate for RTP on UDP - in this ICE line our browser is giving its host candidates- the IP of the interface or interfaces the browser is listening on the computer. The browser can receive\/send SRTP and SRTCP on that IP in case there is IP visibility with some candidate of the remote peer. For example, if the other computer is on the same LAN, hosts candidates will be used. The number after the protocol (udp) – 2122260223 - is the priority of the candidate. Notice that priority of host candidates is the higher than other candidates as using host candidates are more efficient in terms of network resources use. The first lines (component= 1) is for RTP and second line (component = 2) is for RTCP. After the priority the IP of the local interface and the port to be used are included.<\/p>"
     },
     {
       "display": "line",
@@ -427,7 +427,7 @@
       "indent": "2",
       "section": "ICE Candidates",
       "lineText": "a=candidate:1467250027 2 udp 2122260222 192.168.0.196 58874 typ host generation 0",
-      "description": "<p>Host candidate for RTP on UDP - in this ICE line our browser is giving its host candidates- the IP of the interface or interfaces the browser is listening on the computer. The browser can receive\/send SRTP and SRTCP on that IP in case there is IP visibility with some candidate of the remote peer. For example, if the other computer is on the same LAN, hosts candidates will be used. The number after the protocol (udp) – 2122260223 - is the priority of the candidate. Notice that priority of host candidates is the higher than other candidates as using host candidates are more efficient in terms of network resources use. The first lines (component= 1) is for RTP and second line (component = 2) is for RTCP. After the priority the IP of the local interface and the port to be used are included.  Please note that when the browser sends the offer it does not know if the other end will support rtcp-mux, so a port for RTCP has to be offered.<\/p>"
+      "description": "<p>ICE is the protocol chosen to handle NAT traversal in WebRTC. You can find a very didactic and comprehensive explanation of ICE <a href=\"http:\/\/www.slideshare.net\/saghul\/ice-4414037\">here<\/a>. ICE is complex enough to deserve its own post, but I will try to explain its SDP lines in an understandable way.<\/p><p>Host candidate for RTP on UDP - in this ICE line our browser is giving its host candidates- the IP of the interface or interfaces the browser is listening on the computer. The browser can receive\/send SRTP and SRTCP on that IP in case there is IP visibility with some candidate of the remote peer. For example, if the other computer is on the same LAN, hosts candidates will be used. The number after the protocol (udp) – 2122260223 - is the priority of the candidate. Notice that priority of host candidates is the higher than other candidates as using host candidates are more efficient in terms of network resources use. The first lines (component= 1) is for RTP and second line (component = 2) is for RTCP. After the priority the IP of the local interface and the port to be used are included.  Please note that when the browser sends the offer it does not know if the other end will support rtcp-mux, so a port for RTCP has to be offered.<\/p>"
     },
     {
       "display": "line",
