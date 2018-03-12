@@ -158,7 +158,7 @@
       "indent": "2",
       "section": "Audio Lines -> ICE Parameters",
       "lineText": "a=ice-ufrag:Oyef7uvBlwafI3hT",
-      "description": "Once the ICE candidates are exchanged, a verification process starts where both browsers try to reach each other using the candidates provided. The <em>ice-ufgra<\/em> and <em>ice-pwd<\/em> credentials are used in that process to avoid receiving potentials attacks from endpoints that are not involved in the session who could potentially create a media session without authorization."
+      "description": "Once the ICE candidates are exchanged, a verification process starts where both browsers try to reach each other using the candidates provided. The <em>ice-ufrag<\/em> and <em>ice-pwd<\/em> credentials are used in that process to avoid receiving potentials attacks from endpoints that are not involved in the session who could potentially create a media session without authorization."
     },
     {
       "display": "line",
@@ -166,7 +166,7 @@
       "indent": "2",
       "section": "Audio Lines -> ICE Parameters",
       "lineText": "a=ice-pwd:T0teqPLNQQOf+5W+ls+P2p16",
-      "description": "Once the ICE candidates have been exchanged, a verification process starts where both browsers try to reach each other using the candidates provided. The <em>ice-ufgra<\/em> and <em>ice-pwd<\/em> credentials are used in that process to avoid receiving potentials attacks from endpoints that are not involved in the session who could potentially create a media session without authorization."
+      "description": "Once the ICE candidates have been exchanged, a verification process starts where both browsers try to reach each other using the candidates provided. The <em>ice-ufrag<\/em> and <em>ice-pwd<\/em> credentials are used in that process to avoid receiving potentials attacks from endpoints that are not involved in the session who could potentially create a media session without authorization."
     },
     {
       "display": "grouping",
@@ -489,7 +489,7 @@
       "indent": "2",
       "section": "ICE Parameters",
       "lineText": "a=ice-ufrag:Oyef7uvBlwafI3hT",
-      "description": "Once the ICE candidates have been exchanged, a verification process starts where both browsers try to reach each other using the candidates provided. The <em>ice-ufgra<\/em> and <em>ice-pwd<\/em> credentials are used in that process to avoid receiving potentials attacks from endpoints that are not involved in the session who could potentially create a media session without authorization."
+      "description": "Once the ICE candidates have been exchanged, a verification process starts where both browsers try to reach each other using the candidates provided. The <em>ice-ufrag<\/em> and <em>ice-pwd<\/em> credentials are used in that process to avoid receiving potentials attacks from endpoints that are not involved in the session who could potentially create a media session without authorization."
     },
     {
       "display": "line",
@@ -497,7 +497,7 @@
       "indent": "2",
       "section": "ICE Parameters",
       "lineText": "a=ice-pwd:T0teqPLNQQOf+5W+ls+P2p16",
-      "description": "Once the ICE candidates have been exchanged, a verification process starts where both browsers try to reach each other using the candidates provided. The <em>ice-ufgra<\/em> and <em>ice-pwd<\/em> credentials are used in that process to avoid receiving potentials attacks from endpoints that are not involved in the session who could potentially create a media session without authorization."
+      "description": "Once the ICE candidates have been exchanged, a verification process starts where both browsers try to reach each other using the candidates provided. The <em>ice-ufrag<\/em> and <em>ice-pwd<\/em> credentials are used in that process to avoid receiving potentials attacks from endpoints that are not involved in the session who could potentially create a media session without authorization."
     },
     {
       "display": "grouping",
