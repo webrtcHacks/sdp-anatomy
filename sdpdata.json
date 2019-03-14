@@ -256,7 +256,7 @@
       "indent": "2",
       "section": "Audio Lines -> Codec Parameters",
       "lineText": "a=fmtp:111 minptime=10; useinbandfec=1",
-      "description": "This line includes optional payload-format-specific parameters supported by Chrome for audio Opus codec. minipitime=10 specifies the lowest value of the packetization time (ptime: the number of miliseconds of audio transported by a single packet). useinbandfec=1 specifies that the decoder has the capability to take advantage of the Opus in-band FEC (Forward Error Connection). For more info check RFC7587  "
+      "description": "This line includes optional payload-format-specific parameters supported by Chrome for audio Opus codec. minipitime=10 specifies the lowest value of the packetization time (ptime: the number of miliseconds of audio transported by a single packet). useinbandfec=1 specifies that the decoder has the capability to take advantage of the Opus in-band FEC (Forward Error Correction). For more info check RFC7587  "
     },
     {
       "display": "line",
