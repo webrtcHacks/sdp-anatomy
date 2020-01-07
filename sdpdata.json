@@ -35,8 +35,8 @@
       "lineNum": "4",
       "indent": "0",
       "section": "Global Lines",
-      "lineText": "a=group:BUNDLE audio video",
-      "description": "<em>BUNDLE<\/em> groupings establishes a relationship between several media lines included in the SDP, commonly <em>audio<\/em> and <em>video<\/em>. &nbsp;In WebRTC it’s use to multiplex several media flows in the same RTP session as described in <a href=\"http:\/\/tools.ietf.org\/html\/draft-ietf-mmusic-sdp-bundle-negotiation\">draft-ietf-mmusic-sdp-bundle-negotiation<\/a>.&nbsp;In this case the browser offers to multiplex both audio and video, but that has to be also supported and accepted by the other side."
+      "lineText": "a=group:BUNDLE 0 1",
+      "description": "<em>BUNDLE<\/em> groupings establishes a relationship between several media lines included in the SDP, commonly <em>audio<\/em> and <em>video<\/em>. &nbsp;In WebRTC it’s use to multiplex several media flows in the same RTP session as described in <a href=\"http:\/\/tools.ietf.org\/html\/draft-ietf-mmusic-sdp-bundle-negotiation\">draft-ietf-mmusic-sdp-bundle-negotiation<\/a>.&nbsp;In this case the browser offers to multiplex the mids 0 and 1, but that has to be also supported and accepted by the other side."
     },
     {
       "display": "line",
@@ -58,7 +58,7 @@
       "indent": "1",
       "section": "Audio Lines",
       "lineText": "m=audio 58779 UDP\/TLS\/RTP\/SAVPF 111 103 104 9 0 8 106 105 13 126",
-      "description": "<p><em>m<\/em> means it is a media line –  it condenses a lot of information on the media attributes of the stream. In this order, it tells us:<ul><li><em>audio<\/em>- the media type is going to be used for the session (media types are registered at the IANA),<\/li><li><em>54278<\/em><span – the port is going to be used for SRTP (and for RTCP if RTCP multiplex is supported by the other peer),<\/li><li><em>RTP\/SAVPF<\/em>- the transport protocol is going to be used for the session, and last but not least<\/li><li><em>111 103 104 0 8 106 105 13 126<\/em>- the media format descriptions are supported by the browser to send and receive media.<\/li><\/ul>RTP\/SAVPF is defined in <a href=\"http:\/\/tools.ietf.org\/html\/rfc5124\">RFC5124<\/a>. In short it requires the use of SRTP and SRTCP and RTCP Feedback packets.<\/p><p>The media format descriptions, with protocol RTP\/SAVPF, gives the RTP payload numbers which are going to be used for the different formats.&nbsp; Payload numbers lower than 96 are mapped to encodingformats by the<a href=\"http:\/\/www.iana.org\/assignments\/rtp-parameters\/rtp-parameters.xhtml\">IANA<\/a>.&nbsp;In our SDP<em>0<\/em>maps to G711U and<em>8<\/em>to G711A. Format numbers larger than 95 are dynamic and there are <em>a=rtpmap:<\/em>&nbsp;attribute to map from the RTP payload type numbers to media encoding names.&nbsp; There are also<em>a=fmtp:<\/em> attributes which specify format parameters<\/p>"
+      "description": "<p><em>m<\/em> means it is a media line –  it condenses a lot of information on the media attributes of the stream. In this order, it tells us:<ul><li><em>audio<\/em>- the media type is going to be used for the session (media types are registered at the IANA),<\/li><li><em>54278<\/em><span – the port is going to be used for SRTP (and for RTCP if RTCP multiplex is supported by the other peer),<\/li><li><em>UDP\/TLS\/RTP\/SAVPF<\/em>- the transport protocol is going to be used for the session, and last but not least<\/li><li><em>111 103 104 0 8 106 105 13 126<\/em>- the media format descriptions are supported by the browser to send and receive media.<\/li><\/ul>UDP\/TLS\/RTP\/SAVPF is defined in <a href=\"http:\/\/tools.ietf.org\/html\/rfc5764\">RFC5764<\/a>. In short it requires the use of SRTP and SRTCP and RTCP Feedback packets.<\/p><p>The media format descriptions, with protocol UDP\/TLS\/RTP\/SAVPF, gives the RTP payload numbers which are going to be used for the different formats.&nbsp; Payload numbers lower than 96 are mapped to encodingformats by the <a href=\"http:\/\/www.iana.org\/assignments\/rtp-parameters\/rtp-parameters.xhtml\">IANA<\/a>.&nbsp;In our SDP <em>0<\/em> maps to G711U and <em>8<\/em> to G711A. Format numbers larger than 95 are dynamic and there are <em>a=rtpmap:<\/em>&nbsp;attribute to map from the RTP payload type numbers to media encoding names.&nbsp; There are also <em>a=fmtp:<\/em> attributes which specify format parameters<\/p>"
     },
     {
       "display": "line",
@@ -201,7 +201,7 @@
       "lineNum": "21",
       "indent": "1",
       "section": "Audio Lines",
-      "lineText": "a=mid:audio",
+      "lineText": "a=mid:0",
       "description": "This is the identifier which is used in the BUNDLE line. In case we have different media we should have different identifiers for each."
     },
     {
@@ -218,7 +218,7 @@
       "indent": "1",
       "section": "Audio Lines",
       "lineText": "a=extmap:3 http:\/\/www.webrtc.org\/experiments\/rtp-hdrext\/abs-send-time",
-      "description": "<a href=\"http:\/\/www.ietf.org\/rfc\/rfc3550.txt\">RFC3550<\/a> defines the capability to extend the RTP header. This line defines extensions which will be used in RTP headers so that the receiver can decode it correctly and extract the metadata. In this case the browser is indicating that we are going to include information on the audio level in the RTP header as defined in <a href=\"http:\/\/tools.ietf.org\/html\/rfc6464\">RFC6464<\/a>."
+      "description": "The Absolute Send Time extension is used to stamp RTP packets with a timestamp showing the departure time from the system that put this packet on the wire. See more details at: <a href=\"http:\/\/www.webrtc.org\/experiments\/rtp-hdrext\/abs-send-time\">http:\/\/www.webrtc.org\/experiments\/rtp-hdrext\/abs-send-time<\/a>"
     },
     {
       "display": "line",
@@ -388,7 +388,7 @@
       "indent": "1",
       "section": "Video Lines",
       "lineText": "m=video 60372 UDP\/TLS\/RTP\/SAVPF 100 101 116 117 96",
-      "description": "<p><em>m<\/em> means it is a media line –  it condenses a lot of information on the media attributes of the stream. In this order, it tells us:<ul><li><em>audio<\/em>- the media type is going to be used for the session (media types are registered at the IANA),<\/li><li><em>54278<\/em><span – the port is going to be used for SRTP (and for RTCP if RTCP multiplex is supported by the other peer),<\/li><li><em>RTP\/SAVPF<\/em>- the transport protocol is going to be used for the session, and last but not least<\/li><li><em>100 101 116 117 96<\/em> -  the media format descriptions are supported by the browser to send and receive media.<\/li><\/ul>RTP\/SAVPF is defined in <a href=\"http:\/\/tools.ietf.org\/html\/rfc5124\">RFC5124<\/a>. In short it requires the use of SRTP and SRTCP and RTCP Feedback packets.<\/p><p>The media format descriptions, with protocol RTP\/SAVPF, gives the RTP payload numbers which are going to be used for the different formats.&nbsp; Payload numbers lower than 96 are mapped to encodingformats by the<a href=\"http:\/\/www.iana.org\/assignments\/rtp-parameters\/rtp-parameters.xhtml\">IANA<\/a>.&nbsp;In our SDP<em>0<\/em>maps to G711U and<em>8<\/em>to G711A. Format numbers larger than 95 are dynamic and there are <em>a=rtpmap:<\/em>&nbsp;attribute to map from the RTP payload type numbers to media encoding names.&nbsp; There are also<em>a=fmtp:<\/em> attributes which specify format parameters<\/p>"
+      "description": "<p><em>m<\/em> means it is a media line –  it condenses a lot of information on the media attributes of the stream. In this order, it tells us:<ul><li><em>video<\/em>- the media type is going to be used for the session (media types are registered at the IANA),<\/li><li><em>54278<\/em><span – the port is going to be used for SRTP (and for RTCP if RTCP multiplex is supported by the other peer),<\/li><li><em>UDP\/TLS\/RTP\/SAVPF<\/em>- the transport protocol is going to be used for the session, and last but not least<\/li><li><em>100 101 116 117 96<\/em> -  the media format descriptions are supported by the browser to send and receive media.<\/li><\/ul>UDP\/TLS\/RTP\/SAVPF is defined in <a href=\"http:\/\/tools.ietf.org\/html\/rfc5764\">RFC5764<\/a>. In short it requires the use of SRTP and SRTCP and RTCP Feedback packets.<\/p><p>The media format descriptions, with protocol UDP\/TLS\/RTP\/SAVPF, gives the RTP payload numbers which are going to be used for the different formats.&nbsp; Payload numbers lower than 96 are mapped to encodingformats by the <a href=\"http:\/\/www.iana.org\/assignments\/rtp-parameters\/rtp-parameters.xhtml\">IANA<\/a>.&nbsp;In our SDP<em>100<\/em>maps to VP8 and <em>101<\/em>to VP9. Format numbers larger than 95 are dynamic and there are <em>a=rtpmap:<\/em>&nbsp;attribute to map from the RTP payload type numbers to media encoding names.&nbsp; There are also <em>a=fmtp:<\/em> attributes which specify format parameters<\/p>"
     },
     {
       "display": "line",
@@ -532,7 +532,7 @@
       "lineNum": "57",
       "indent": "1",
       "section": "Video Lines",
-      "lineText": "a=mid:video",
+      "lineText": "a=mid:1",
       "description": "This is the identifier which is used in the BUNDLE line. As we have different media we have different identifiers for each."
     },
     {
