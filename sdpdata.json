@@ -36,7 +36,7 @@
       "indent": "0",
       "section": "Global Lines",
       "lineText": "a=group:BUNDLE 0 1",
-      "description": "<em>BUNDLE<\/em> groupings establishes a relationship between several media lines included in the SDP, commonly <em>audio<\/em> and <em>video<\/em>. &nbsp;In WebRTC it’s use to multiplex several media flows in the same RTP session as described in <a href=\"http:\/\/tools.ietf.org\/html\/draft-ietf-mmusic-sdp-bundle-negotiation\">draft-ietf-mmusic-sdp-bundle-negotiation<\/a>.&nbsp;In this case the browser offers to multiplex the mids 0 and 1, but that has to be also supported and accepted by the other side."
+      "description": "<em>BUNDLE<\/em> groupings establishes a relationship between several media lines included in the SDP, commonly <em>audio<\/em> and <em>video<\/em>. &nbsp; In WebRTC it’s use to multiplex several media flows in the same RTP session as described in <a href=\"http:\/\/tools.ietf.org\/html\/draft-ietf-mmusic-sdp-bundle-negotiation\">draft-ietf-mmusic-sdp-bundle-negotiation<\/a>.&nbsp;In this case the browser offers to multiplex the mids 0 and 1, but that has to be also supported and accepted by the other side."
     },
     {
       "display": "line",
@@ -358,7 +358,7 @@
       "indent": "2",
       "section": "Audio Lines -> SSRC Parameters",
       "lineText": "a=ssrc:3570614608 msid:lgsCFqt9kN2fVKw5wg3NKqGdATQoltEwOdMS 35429d94-5637-4686-9ecd-7d0622261ce8",
-      "description": "This line is used to signal the association between the RTP concept of SSRC and the WebRTC concept of “media stream” \/ “media stream track” using SDP signaling [<a href=\"http:\/\/tools.ietf.org\/html\/draft-ietf-mmusic-msid\">draft-ietf-mmusic-msid<\/a>]. The first parameter corresponds to the id of the Media Stream and the second onde the if of the Media Stream Track. These ids are handled in the WebRTC API. The first number is the SSRC identifier that will be included in the SSRC field of the RTP packets. "
+      "description": "This line is used to signal the association between the RTP concept of SSRC and the WebRTC concept of “media stream” \/ “media stream track” using SDP signaling [<a href=\"http:\/\/tools.ietf.org\/html\/draft-ietf-mmusic-msid\">draft-ietf-mmusic-msid<\/a>]. The first parameter corresponds to the id of the Media Stream and the second maps to the id of the Media Stream Track. These ids are handled in the WebRTC API. The first number is the SSRC identifier that will be included in the SSRC field of the RTP packets. "
     },
     {
       "display": "line",
@@ -388,7 +388,7 @@
       "indent": "1",
       "section": "Video Lines",
       "lineText": "m=video 60372 UDP\/TLS\/RTP\/SAVPF 100 101 116 117 96",
-      "description": "<p><em>m<\/em> means it is a media line –  it condenses a lot of information on the media attributes of the stream. In this order, it tells us:<ul><li><em>video<\/em>- the media type is going to be used for the session (media types are registered at the IANA),<\/li><li><em>54278<\/em><span – the port is going to be used for SRTP (and for RTCP if RTCP multiplex is supported by the other peer),<\/li><li><em>UDP\/TLS\/RTP\/SAVPF<\/em>- the transport protocol is going to be used for the session, and last but not least<\/li><li><em>100 101 116 117 96<\/em> -  the media format descriptions are supported by the browser to send and receive media.<\/li><\/ul>UDP\/TLS\/RTP\/SAVPF is defined in <a href=\"http:\/\/tools.ietf.org\/html\/rfc5764\">RFC5764<\/a>. In short it requires the use of SRTP and SRTCP and RTCP Feedback packets.<\/p><p>The media format descriptions, with protocol UDP\/TLS\/RTP\/SAVPF, gives the RTP payload numbers which are going to be used for the different formats.&nbsp; Payload numbers lower than 96 are mapped to encodingformats by the <a href=\"http:\/\/www.iana.org\/assignments\/rtp-parameters\/rtp-parameters.xhtml\">IANA<\/a>.&nbsp;In our SDP<em>100<\/em>maps to VP8 and <em>101<\/em>to VP9. Format numbers larger than 95 are dynamic and there are <em>a=rtpmap:<\/em>&nbsp;attribute to map from the RTP payload type numbers to media encoding names.&nbsp; There are also <em>a=fmtp:<\/em> attributes which specify format parameters<\/p>"
+      "description": "<p><em>m<\/em> means it is a media line –  it condenses a lot of information on the media attributes of the stream. In this order, it tells us:<ul><li><em>video<\/em>- the media type is going to be used for the session (media types are registered at the IANA),<\/li><li><em>60372<\/em><span – the port is going to be used for SRTP (and for RTCP if RTCP multiplex is supported by the other peer),<\/li><li><em>UDP\/TLS\/RTP\/SAVPF<\/em>- the transport protocol is going to be used for the session, and last but not least<\/li><li><em>100 101 116 117 96<\/em> - the media format descriptions are supported by the browser to send and receive media.<\/li><\/ul>UDP\/TLS\/RTP\/SAVPF is defined in <a href=\"http:\/\/tools.ietf.org\/html\/rfc5764\">RFC5764<\/a>. In short it requires the use of SRTP and SRTCP and RTCP Feedback packets.<\/p><p>The media format descriptions, with protocol UDP\/TLS\/RTP\/SAVPF, gives the RTP payload numbers which are going to be used for the different formats.&nbsp; Payload numbers lower than 96 are mapped to encodingformats by the <a href=\"http:\/\/www.iana.org\/assignments\/rtp-parameters\/rtp-parameters.xhtml\">IANA<\/a>.&nbsp; In our SDP <em>100<\/em> maps to VP8 and <em>101<\/em> to VP9. Format numbers larger than 95 are dynamic and there are <em>a=rtpmap:<\/em>&nbsp;attribute to map from the RTP payload type numbers to media encoding names.&nbsp; There are also <em>a=fmtp:<\/em> attributes which specify format parameters<\/p>"
     },
     {
       "display": "line",
@@ -396,7 +396,7 @@
       "indent": "1",
       "section": "Video Lines",
       "lineText": "c=IN IP4 217.130.243.155",
-      "description": "<em>c<\/em> is a connection line. This line gives the IP from where you expect to send and receive the real time traffic. As ICE is mandatory in WebRTC the IP in the c-line is not going to be used.(em>"
+      "description": "<em>c<\/em> is a connection line. This line gives the IP from where you expect to send and receive the real time traffic. As ICE is mandatory in WebRTC the IP in the c-line is not going to be used."
     },
     {
       "display": "line",
@@ -467,7 +467,7 @@
       "indent": "2",
       "section": "ICE Candidates",
       "lineText": "a=candidate:750991856 1 udp 25108223 237.30.30.30 60372 typ relay raddr 47.61.61.61 rport 54765 generation 0",
-      "description": "<p>ICE is the protocol chosen for NAT traversal in WebRTC. You can find a very didactic and comprehensive explanation of ICE <a href=\"http:\/\/www.slideshare.net\/saghul\/ice-4414037\">here<\/a>. ICE is complex enough to deserve its own post, but I will try to explain its SDP lines in an understandable way.<\/p><p>Relay candidate for RTP over UDP - next we have the relay candidates. Those candidates are obtained from a TURN server which must be provisioned when creating the peer connection. Note that the priority here is lower than the host and reflex candidates (2157334355 is higher) so the relay will be used only if there is not Ip connectivity between host and reflex candidates. Just for your curiosity we used the open source <a href=\"coturn.net\">coturn<\/a> project in this test (see our post on that <a href=\"https:\/\/webrtchacks.com\/coturn\/\">here<\/a>). The first IP\/port couple corresponds to the IP and port assigned by the TURN server for this media session. <em>raddr<\/em> and <em>rport<\/em> crrespond to the public IP and the public port through which the WebRTC enpoint is reaching Internet.<\/p>"
+      "description": "<p>ICE is the protocol chosen for NAT traversal in WebRTC. You can find a very didactic and comprehensive explanation of ICE <a href=\"http:\/\/www.slideshare.net\/saghul\/ice-4414037\">here<\/a>. ICE is complex enough to deserve its own post, but I will try to explain its SDP lines in an understandable way.<\/p><p>Relay candidate for RTP over UDP - next we have the relay candidates. Those candidates are obtained from a TURN server which must be provisioned when creating the peer connection. Note that the priority here is lower than the host and reflex candidates (2157334355 is higher) so the relay will be used only if there is not Ip connectivity between host and reflex candidates. Just for your curiosity we used the open source <a href=\"coturn.net\">coturn<\/a> project in this test (see our post on that <a href=\"https:\/\/webrtchacks.com\/coturn\/\">here<\/a>). The first IP\/port couple corresponds to the IP and port assigned by the TURN server for this media session. <em>raddr<\/em> and <em>rport<\/em> correspond to the public IP and the public port through which the WebRTC enpoint is reaching Internet.<\/p>"
     },
     {
       "display": "line",
