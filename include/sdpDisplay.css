@@ -10,6 +10,10 @@
     margin: 1px !important;
     padding: 5px 10px 5px 10px !important;
 }
+.container {
+    width: 100% !important;
+    max-width: none !important;
+}
 
 /******app CSS classes******/
 .section-label {
@@ -33,7 +37,7 @@
 }
 
 #description {
-    margin-left: 10px;
+    margin-right: 15px;
     margin-bottom: 5px;
     position: fixed;
     overflow-wrap: normal;
